@@ -33,8 +33,11 @@ public class MainController {
     }
 
     @FXML
-    void btnStudentLogin(ActionEvent event) {
+    void btnStudentLogin(ActionEvent event) throws IOException {
             System.out.println("Student Login");
+            Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/StudentLogin.fxml"))));
+        stage.show();
     }
 
     @FXML
