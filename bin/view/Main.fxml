@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPage" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="611.0" prefWidth="613.0" stylesheets="" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="49.0" prefHeight="49.0" prefWidth="358.0" text="Course Registration System" textAlignment="JUSTIFY" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.2371134020618557" layoutX="72.0" layoutY="142.0" orientation="VERTICAL" prefHeight="234.0" prefWidth="471.0" style="-fx-background-color: #cccdc6; -fx-border-radius: 400;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" layoutX="-62.0" layoutY="13.0" prefHeight="27.0" prefWidth="590.0" text="Log in as">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Blend />
+               </effect>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="btnAdminLogin" defaultButton="true" layoutX="110.0" layoutY="30.0" mnemonicParsing="false" onAction="#btnAdminLoginOnAction" prefHeight="35.0" prefWidth="248.0" style="-fx-background-color: #06402B; -fx-blend-mode: 5; -fx-text-fill: white;" text="Admin / Faculty">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnStudentLogin" defaultButton="true" layoutX="111.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnStudentLogin" prefHeight="35.0" prefWidth="248.0" style="-fx-background-color: #8B0000; -fx-text-fill: white;" text="Student">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Blend />
+               </effect>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Accordion layoutX="41.0" layoutY="427.0" />
+      <SplitPane dividerPositions="0.3793604651162792" layoutX="73.0" layoutY="425.0" orientation="VERTICAL" prefHeight="139.0" prefWidth="471.0" style="-fx-background-color: #cccdc6;">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" layoutX="-62.0" layoutY="13.0" prefHeight="27.0" prefWidth="590.0" text="Sign up as">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Blend />
+               </effect>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="470.0">
+               <children>
+                  <Button fx:id="btnStudentSignup" defaultButton="true" layoutX="111.0" layoutY="26.0" mnemonicParsing="false" onAction="#btnStudentSignup" prefHeight="35.0" prefWidth="248.0" style="-fx-background-color: #8B0000; -fx-text-fill: white;" text="Student">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Blend />
+               </effect>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="392.0" prefHeight="18.0" prefWidth="470.0" text="-----------------------------------------------OR----------------------------------------------" />
+   </children>
+</AnchorPane>
