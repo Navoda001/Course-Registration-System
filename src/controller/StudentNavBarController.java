@@ -60,8 +60,11 @@ public class StudentNavBarController {
     }
 
     @FXML
-    void btnEditAccountInfoOnAction(ActionEvent event) {
+    void btnEditAccountInfoOnAction(ActionEvent event) throws IOException {
         System.out.println("Edit Account Info");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EditProfile.fxml"));
+        studentFrame.getChildren().add(node);
     }
 
     @FXML

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,6 +18,9 @@ public class StudentSignupController {
 
     @FXML
     private AnchorPane studentSignupPage;
+
+    @FXML
+    private DatePicker txtBirthDate;
 
     @FXML
     private Button btnBack;
