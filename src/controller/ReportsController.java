@@ -17,13 +17,13 @@ public class ReportsController {
     private Button btnCourseSearch;
 
     @FXML
-    private ListView<?> listCourse;
+    private ListView<?> listCourses;
 
     @FXML
     private AnchorPane reportsFrame;
 
     @FXML
-    private TextField txtSearchCourse;
+    private TextField txtGenarateReports;
 
     @FXML
     void btnCourseSearchOnAction(ActionEvent event) throws IOException {

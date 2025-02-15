@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditCourseController">
    <children>
       <Label layoutX="144.0" layoutY="10.0" text="Edit Course">
@@ -15,7 +14,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="40.0" layoutY="65.0" prefHeight="30.0" prefWidth="264.0" promptText="Search for a course...">
+      <TextField fx:id="txtEditCourse" layoutX="40.0" layoutY="65.0" prefHeight="30.0" prefWidth="264.0" promptText="Search for a course...">
          <font>
             <Font size="14.0" />
          </font>
@@ -25,7 +24,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ListView layoutX="40.0" layoutY="96.0" prefHeight="87.0" prefWidth="264.0" />
+      <ListView fx:id="listEditCourse" layoutX="40.0" layoutY="96.0" prefHeight="87.0" prefWidth="264.0" />
       <AnchorPane fx:id="editCourseFrame" layoutX="16.0" layoutY="196.0" prefHeight="405.0" prefWidth="384.0" />
    </children>
 </AnchorPane>

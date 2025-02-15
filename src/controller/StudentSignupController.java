@@ -50,8 +50,14 @@ public class StudentSignupController {
     private TextField txtUserName;
 
     @FXML
-    void btnStudentSignup(ActionEvent event) {
+    private Label lblStudentSignupErrorMessage;
+
+    @FXML
+    void btnStudentSignup(ActionEvent event) throws IOException {
         System.out.println("Student Signup");
+        studentSignupPage.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Logins/StudentLogin.fxml"));
+        studentSignupPage.getChildren().add(node);
     }
 
     @FXML

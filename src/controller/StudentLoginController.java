@@ -35,6 +35,9 @@ public class StudentLoginController {
     private TextField txtUsername;
 
     @FXML
+    private Label lblStudentLoginErrorMessage;
+
+    @FXML
     void btnBackToMainOnAction(ActionEvent event) throws IOException{
         System.out.println("BACK TO MAIN");
         StudentLoginPage.getChildren().clear();
@@ -43,8 +46,11 @@ public class StudentLoginController {
     }
 
     @FXML
-    void btnUserLoginOnAction(ActionEvent event) {
+    void btnUserLoginOnAction(ActionEvent event) throws IOException {
         System.out.println("STUDENT LOGIN");
+        StudentLoginPage.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/StudentNavBar.fxml"));
+        StudentLoginPage.getChildren().add(node);
     }
 
     @FXML

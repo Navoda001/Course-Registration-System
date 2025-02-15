@@ -7,7 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ListView;
 
 public class StudentRegisterNewCourseController {
 
@@ -15,7 +17,13 @@ public class StudentRegisterNewCourseController {
     private Button btnCourseSearch;
 
     @FXML
+    private ListView<?> listCourses;
+
+    @FXML
     private AnchorPane registerForm;
+
+    @FXML
+    private TextField txtSearchCourses;
 
     @FXML
     void btnCourseSearchOnAction(ActionEvent event) throws IOException {

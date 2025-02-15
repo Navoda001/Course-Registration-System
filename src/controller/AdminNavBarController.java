@@ -40,6 +40,9 @@ public class AdminNavBarController {
     private Label lblrolle;
 
     @FXML
+    private AnchorPane mainFrame;
+
+    @FXML
     public void initialize() throws IOException {
         lblStudentName.setText("John Doe");
         lblStudentId.setText("123456");
@@ -65,8 +68,6 @@ public class AdminNavBarController {
         AdminFrame.getChildren().add(node);
     }
 
-   
-
     @FXML
     void btnEditCourseOnAction(ActionEvent event) throws IOException {
         System.out.println("Edit Course");
@@ -84,8 +85,11 @@ public class AdminNavBarController {
     }
 
     @FXML
-    void btnSignOutOnAction(ActionEvent event) {
+    void btnSignOutOnAction(ActionEvent event) throws IOException {
         System.out.println("Sign Out");
+        mainFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
+        mainFrame.getChildren().add(node);
     }
 
 }

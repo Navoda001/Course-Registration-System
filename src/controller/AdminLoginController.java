@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -41,6 +42,9 @@ public class AdminLoginController {
     private PasswordField txtHiddenPassword;
 
     @FXML
+    private Label lblAdminLoginErrorMessage;
+    
+    @FXML
     private TextField txtUsername;
 
     @FXML
@@ -52,8 +56,11 @@ public class AdminLoginController {
     }
 
     @FXML
-    void btnUserLoginOnAction(ActionEvent event) {
+    void btnUserLoginOnAction(ActionEvent event) throws IOException {
         System.out.println("login ");
+        adminLoginPage.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
+        adminLoginPage.getChildren().add(node);
         
     }
 
