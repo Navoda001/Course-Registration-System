@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GenaratedReportsController">
+   <children>
+      <Label fx:id="lblCourseId" layoutX="61.0" layoutY="111.0" text="Course Id">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCourseName" layoutX="197.0" layoutY="111.0" text="Course Name">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="179.0" layoutY="111.0" text=":">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="216.0" prefHeight="20.0" prefWidth="158.0" text="Course Enrolments         :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="265.0" prefHeight="20.0" prefWidth="158.0" text="Course Vacancies           :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="313.0" text="Course completion rates :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCourseEnrolment" layoutX="199.0" layoutY="218.0" prefHeight="20.0" prefWidth="158.0" text="Course Enrolments value">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCourseVacancies" layoutX="199.0" layoutY="267.0" prefHeight="20.0" prefWidth="158.0" text="Course Vacancies value">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCourseCompletion" layoutX="199.0" layoutY="315.0" prefHeight="20.0" prefWidth="158.0" text="Course Completion value">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="29.0" text="Genarated Report" textFill="#0f0fbf">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

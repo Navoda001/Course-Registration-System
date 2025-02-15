@@ -76,8 +76,11 @@ public class AdminNavBarController {
     }
 
     @FXML
-    void btnReportsOnAction(ActionEvent event) {
+    void btnReportsOnAction(ActionEvent event) throws IOException {
         System.out.println("Reports");
+        AdminFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/Reports.fxml"));
+        AdminFrame.getChildren().add(node);
     }
 
     @FXML
