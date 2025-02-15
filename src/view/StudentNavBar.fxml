@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentNavBarController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#24219e" height="611.0" layoutX="-18.0" stroke="BLACK" strokeType="INSIDE" width="218.0">
+         <effect>
+            <BoxBlur />
+         </effect>
+      </Rectangle>
+      <AnchorPane fx:id="studentFrame" layoutX="200.0" prefHeight="611.0" prefWidth="416.0" />
+      <Label layoutX="55.0" layoutY="36.0" text="Student" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnDashboard" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="30.0" prefWidth="178.0" text="Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegisterNewCourse" layoutX="10.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnRegisterNewCourseOnAction" prefHeight="30.0" prefWidth="178.0" text=" Register New Course">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEnrolmentsHistory" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#btnEnrolmentsHistoryOnAction" prefHeight="30.0" prefWidth="178.0" text=" Enrolments History">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAcademicRecord" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnAcademicRecordOnAction" prefHeight="30.0" prefWidth="178.0" text="Academic Record">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEditAccountInfo" layoutX="10.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnEditAccountInfoOnAction" prefHeight="30.0" prefWidth="178.0" text=" Edit Account information">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="11.0" layoutY="503.0" text="Name :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStudentName" layoutX="35.0" layoutY="527.0" prefHeight="20.0" prefWidth="152.0" text="John" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStudentId" layoutX="35.0" layoutY="573.0" prefHeight="20.0" prefWidth="152.0" text="12345" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="550.0" text="ID :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
