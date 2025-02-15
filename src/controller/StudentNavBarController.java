@@ -37,6 +37,9 @@ public class StudentNavBarController {
     private AnchorPane studentFrame;
 
     @FXML
+    private Button btnSignOut;
+
+    @FXML
     public void initialize() throws IOException {
         lblStudentName.setText("John Doe");
         lblStudentId.setText("123456");
@@ -47,8 +50,11 @@ public class StudentNavBarController {
     }
 
     @FXML
-    void btnAcademicRecordOnAction(ActionEvent event) {
+    void btnAcademicRecordOnAction(ActionEvent event) throws IOException {
         System.out.println("Academic Record");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/AcademicRecord.fxml"));
+        studentFrame.getChildren().add(node);
     }
 
     @FXML
@@ -83,4 +89,8 @@ public class StudentNavBarController {
         studentFrame.getChildren().add(node);
     }
 
+    @FXML
+    void btnSignOutOnAction(ActionEvent event) {
+        System.out.println("Sign Out");
+    }
 }

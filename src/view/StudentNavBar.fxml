@@ -45,25 +45,30 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="11.0" layoutY="503.0" text="Name :" textFill="WHITE">
+      <Label layoutX="11.0" layoutY="432.0" text="Name :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblStudentName" layoutX="35.0" layoutY="527.0" prefHeight="20.0" prefWidth="152.0" text="John" textFill="WHITE">
+      <Label fx:id="lblStudentName" layoutX="35.0" layoutY="456.0" prefHeight="20.0" prefWidth="152.0" text="John" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblStudentId" layoutX="35.0" layoutY="573.0" prefHeight="20.0" prefWidth="152.0" text="12345" textFill="WHITE">
+      <Label fx:id="lblStudentId" layoutX="35.0" layoutY="502.0" prefHeight="20.0" prefWidth="152.0" text="12345" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="11.0" layoutY="550.0" text="ID :" textFill="WHITE">
+      <Label layoutX="11.0" layoutY="479.0" text="ID :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="btnSignOut" layoutX="10.0" layoutY="556.0" mnemonicParsing="false" onAction="#btnSignOutOnAction" prefHeight="30.0" prefWidth="178.0" text="Sign Out" textFill="RED">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
