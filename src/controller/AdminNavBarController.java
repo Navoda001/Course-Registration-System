@@ -49,20 +49,30 @@ public class AdminNavBarController {
         AdminFrame.getChildren().add(node);
     }
 
-
     @FXML
-    void btnAddNewCourseOnAction(ActionEvent event) {
-        System.out.println("Add New Course");   
-    }
-
-    @FXML
-    void btnDashboardOnAction(ActionEvent event) {
+    void btnDashboardOnAction(ActionEvent event) throws IOException {
         System.out.println("Dashboard");
+        AdminFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/Dashboard.fxml"));
+        AdminFrame.getChildren().add(node);
     }
 
     @FXML
-    void btnEditCourseOnAction(ActionEvent event) {
+    void btnAddNewCourseOnAction(ActionEvent event) throws IOException {
+        System.out.println("Add New Course");   
+        AdminFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/AddNewCourse.fxml"));
+        AdminFrame.getChildren().add(node);
+    }
+
+   
+
+    @FXML
+    void btnEditCourseOnAction(ActionEvent event) throws IOException {
         System.out.println("Edit Course");
+        AdminFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/EditCourse.fxml"));
+        AdminFrame.getChildren().add(node);
     }
 
     @FXML
