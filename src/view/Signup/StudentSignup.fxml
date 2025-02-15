@@ -109,6 +109,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <DatePicker layoutX="278.0" layoutY="295.0" prefHeight="26.0" prefWidth="209.0" promptText="MM/DD/YYYY" />
+      <DatePicker fx:id="txtBirthDate" layoutX="278.0" layoutY="295.0" prefHeight="26.0" prefWidth="209.0" promptText="MM/DD/YYYY" />
    </children>
 </AnchorPane>

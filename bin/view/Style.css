@@ -1,0 +1,5 @@
+#btnAdminLogin:hover{
+    -fx-blend-mode: screen; /* Or another valid blend mode */
+    -fx-background-color: #06402B;
+    -fx-text-fill: white;
+}

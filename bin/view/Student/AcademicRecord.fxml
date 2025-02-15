@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AcademicRecordController">
+   <children>
+      <Label layoutX="110.0" layoutY="10.0" text="Academic Record">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableAcademicRecord" layoutX="14.0" layoutY="120.0" prefHeight="336.0" prefWidth="388.0">
+        <columns>
+          <TableColumn fx:id="columnCourseId" prefWidth="112.800048828125" text="Course ID" />
+          <TableColumn fx:id="columnSemester" prefWidth="183.99993896484375" text="Semester" />
+            <TableColumn fx:id="columnGrade" prefWidth="91.199951171875" text="Grade" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
