@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectedCourseController">
    <children>
       <Label fx:id="lblCourseName" layoutX="185.0" layoutY="14.0" text="Course Name">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCourseName1" layoutX="84.0" layoutY="14.0" text="Course Id :">
+      <Label fx:id="lblCourseId" layoutX="84.0" layoutY="14.0" text="Course Id :">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

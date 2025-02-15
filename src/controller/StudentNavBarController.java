@@ -65,8 +65,11 @@ public class StudentNavBarController {
     }
 
     @FXML
-    void btnEnrolmentsHistoryOnAction(ActionEvent event) {
+    void btnEnrolmentsHistoryOnAction(ActionEvent event) throws IOException {
         System.out.println("Enrolments History");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EnrolmentHistory.fxml"));
+        studentFrame.getChildren().add(node);
     }
 
     @FXML
