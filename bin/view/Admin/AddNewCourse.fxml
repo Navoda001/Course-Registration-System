@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewCourseController">
+   <children>
+      <Label layoutX="114.0" layoutY="10.0" text="Add New Course">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2b5b7" height="471.0" layoutX="14.0" layoutY="111.0" stroke="BLACK" strokeType="OUTSIDE" width="386.0" />
+      <Label layoutX="27.0" layoutY="166.0" text="Course Name :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCourseName" layoutX="134.0" layoutY="166.0" prefHeight="30.0" prefWidth="251.0" promptText="Course Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="33.0" layoutY="214.0" text="Credit Hours :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="264.0" text="Department :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="314.0" text="Prerequisites :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="364.0" text="Maximum enrollment capacity :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCreditHours" layoutX="134.0" layoutY="214.0" prefHeight="30.0" prefWidth="251.0" promptText="Credit Hours">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDepartment" layoutX="134.0" layoutY="263.0" prefHeight="30.0" prefWidth="251.0" promptText="Department">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPrerequisites" layoutX="134.0" layoutY="313.0" prefHeight="30.0" prefWidth="251.0" promptText="Prerequisites">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCapacity" layoutX="249.0" layoutY="363.0" prefHeight="30.0" prefWidth="136.0" promptText="Capacity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnNewCourseAdd" layoutX="24.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnNewCourseAddOnAction" prefHeight="26.0" prefWidth="362.0" style="-fx-background-color: #24219e;" text="Add Course" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblAddCourseErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="449.0" prefHeight="20.0" prefWidth="362.0" text="Error Message" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
