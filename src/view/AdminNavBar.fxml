@@ -7,15 +7,15 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainFrame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentNavBarController">
+<AnchorPane fx:id="mainFrame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminNavBarController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#24219e" height="611.0" layoutX="-18.0" stroke="BLACK" strokeType="INSIDE" width="218.0">
          <effect>
             <BoxBlur />
          </effect>
       </Rectangle>
-      <AnchorPane fx:id="studentFrame" layoutX="200.0" prefHeight="611.0" prefWidth="416.0" />
-      <Label layoutX="55.0" layoutY="36.0" text="Student" textFill="WHITE">
+      <AnchorPane fx:id="AdminFrame" layoutX="200.0" prefHeight="611.0" prefWidth="416.0" />
+      <Label fx:id="lblrolle" layoutX="16.0" layoutY="38.0" text="Admin/Faculty" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -25,42 +25,37 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnRegisterNewCourse" layoutX="10.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnRegisterNewCourseOnAction" prefHeight="30.0" prefWidth="178.0" text=" Register New Course">
+      <Button fx:id="btnAddNewCourse" layoutX="10.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnAddNewCourseOnAction" prefHeight="30.0" prefWidth="178.0" text="Add New Course">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnEnrolmentsHistory" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#btnEnrolmentsHistoryOnAction" prefHeight="30.0" prefWidth="178.0" text=" Enrolments History">
+      <Button fx:id="btnEditCourse" layoutX="10.0" layoutY="264.0" mnemonicParsing="false" onAction="#btnEditCourseOnAction" prefHeight="30.0" prefWidth="178.0" text="Edit Course">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnAcademicRecord" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnAcademicRecordOnAction" prefHeight="30.0" prefWidth="178.0" text="Academic Record">
+      <Button fx:id="btnReports" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnReportsOnAction" prefHeight="30.0" prefWidth="178.0" text="Reports">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnEditAccountInfo" layoutX="10.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnEditAccountInfoOnAction" prefHeight="30.0" prefWidth="178.0" text=" Edit Account information">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Label layoutX="11.0" layoutY="432.0" text="Name :" textFill="WHITE">
+      <Label layoutX="11.0" layoutY="411.0" text="Name :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblStudentName" layoutX="35.0" layoutY="456.0" prefHeight="20.0" prefWidth="152.0" text="John" textFill="WHITE">
+      <Label fx:id="lblStudentName" layoutX="35.0" layoutY="435.0" prefHeight="20.0" prefWidth="152.0" text="John" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblStudentId" layoutX="35.0" layoutY="502.0" prefHeight="20.0" prefWidth="152.0" text="12345" textFill="WHITE">
+      <Label fx:id="lblStudentId" layoutX="35.0" layoutY="481.0" prefHeight="20.0" prefWidth="152.0" text="12345" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="11.0" layoutY="479.0" text="ID :" textFill="WHITE">
+      <Label layoutX="11.0" layoutY="458.0" text="ID :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

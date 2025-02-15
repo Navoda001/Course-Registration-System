@@ -13,6 +13,9 @@ import javafx.scene.layout.AnchorPane;
 public class StudentNavBarController {
 
     @FXML
+    private AnchorPane mainFrame;
+
+    @FXML
     private Button btnAcademicRecord;
 
     @FXML
@@ -50,34 +53,10 @@ public class StudentNavBarController {
     }
 
     @FXML
-    void btnAcademicRecordOnAction(ActionEvent event) throws IOException {
-        System.out.println("Academic Record");
-        studentFrame.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/AcademicRecord.fxml"));
-        studentFrame.getChildren().add(node);
-    }
-
-    @FXML
     void btnDashboardOnAction(ActionEvent event) throws IOException {
         System.out.println("Dashboard");
         studentFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Student/Dashboard.fxml"));
-        studentFrame.getChildren().add(node);
-    }
-
-    @FXML
-    void btnEditAccountInfoOnAction(ActionEvent event) throws IOException {
-        System.out.println("Edit Account Info");
-        studentFrame.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EditProfile.fxml"));
-        studentFrame.getChildren().add(node);
-    }
-
-    @FXML
-    void btnEnrolmentsHistoryOnAction(ActionEvent event) throws IOException {
-        System.out.println("Enrolments History");
-        studentFrame.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EnrolmentHistory.fxml"));
         studentFrame.getChildren().add(node);
     }
 
@@ -90,7 +69,34 @@ public class StudentNavBarController {
     }
 
     @FXML
-    void btnSignOutOnAction(ActionEvent event) {
+    void btnEnrolmentsHistoryOnAction(ActionEvent event) throws IOException {
+        System.out.println("Enrolments History");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EnrolmentHistory.fxml"));
+        studentFrame.getChildren().add(node);
+    }
+
+    @FXML
+    void btnAcademicRecordOnAction(ActionEvent event) throws IOException {
+        System.out.println("Academic Record");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/AcademicRecord.fxml"));
+        studentFrame.getChildren().add(node);
+    }
+
+    @FXML
+    void btnEditAccountInfoOnAction(ActionEvent event) throws IOException {
+        System.out.println("Edit Account Info");
+        studentFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/EditProfile.fxml"));
+        studentFrame.getChildren().add(node);
+    }
+
+    @FXML
+    void btnSignOutOnAction(ActionEvent event) throws IOException {
         System.out.println("Sign Out");
+        mainFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
+        mainFrame.getChildren().add(node);
     }
 }

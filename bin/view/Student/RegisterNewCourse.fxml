@@ -14,7 +14,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="30.0" layoutY="61.0" prefHeight="30.0" prefWidth="264.0" promptText="Search for a course...">
+      <TextField fx:id="txtSearchCourses" layoutX="30.0" layoutY="61.0" prefHeight="30.0" prefWidth="264.0" promptText="Search for a course...">
          <font>
             <Font size="14.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ListView layoutX="30.0" layoutY="92.0" prefHeight="87.0" prefWidth="264.0" />
+      <ListView fx:id="listCourses" layoutX="30.0" layoutY="92.0" prefHeight="87.0" prefWidth="264.0" />
       <AnchorPane fx:id="registerForm" layoutX="17.0" layoutY="188.0" prefHeight="409.0" prefWidth="382.0" />
    </children>
 </AnchorPane>

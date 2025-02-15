@@ -46,7 +46,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="157.0" layoutY="411.0" mnemonicParsing="false" onAction="#btnUserLoginOnAction" prefHeight="26.0" prefWidth="295.0" style="-fx-background-color: #0e0e81;" text="Log In" textFill="#e4e4e4">
+      <Button fx:id="btnLogin" layoutX="157.0" layoutY="417.0" mnemonicParsing="false" onAction="#btnUserLoginOnAction" prefHeight="26.0" prefWidth="295.0" style="-fx-background-color: #0e0e81;" text="Log In" textFill="#e4e4e4">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -59,7 +59,7 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <RadioButton fx:id="btnFaculty" layoutX="206.0" layoutY="360.0" mnemonicParsing="false" text="Faculty">
+      <RadioButton fx:id="btnFaculty" layoutX="206.0" layoutY="347.0" mnemonicParsing="false" text="Faculty">
          <toggleGroup>
             <ToggleGroup fx:id="Category" />
          </toggleGroup>
@@ -67,7 +67,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </RadioButton>
-      <RadioButton fx:id="btnAdmin" layoutX="331.0" layoutY="360.0" mnemonicParsing="false" text="Administrative" toggleGroup="$Category">
+      <RadioButton fx:id="btnAdmin" layoutX="331.0" layoutY="347.0" mnemonicParsing="false" text="Administrative" toggleGroup="$Category">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -75,6 +75,11 @@
       <Label layoutX="163.0" layoutY="60.0" text="Login As Faculty / Admin" textFill="#21659c">
          <font>
             <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAdminLoginErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="371.0" prefHeight="34.0" prefWidth="302.0" text="Error Message" textFill="RED">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>

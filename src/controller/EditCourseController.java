@@ -11,26 +11,26 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.ListView;
 
-public class StudentRegisterNewCourseController {
+public class EditCourseController {
 
     @FXML
     private Button btnCourseSearch;
 
     @FXML
-    private ListView<?> listCourses;
+    private AnchorPane editCourseFrame;
+
+     @FXML
+    private ListView<?> listEditCourse;
 
     @FXML
-    private AnchorPane registerForm;
-
-    @FXML
-    private TextField txtSearchCourses;
+    private TextField txtEditCourse;
 
     @FXML
     void btnCourseSearchOnAction(ActionEvent event) throws IOException {
-        System.out.println("Course Search");
-        registerForm.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/Student/SelectedCourse.fxml"));
-        registerForm.getChildren().add(node);
+        System.out.println("Search Course");
+        editCourseFrame.getChildren().clear();
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/SelectedCourse.fxml"));
+        editCourseFrame.getChildren().add(node);
     }
 
 }

@@ -110,5 +110,10 @@
          </cursor>
       </Button>
       <DatePicker fx:id="txtBirthDate" layoutX="278.0" layoutY="295.0" prefHeight="26.0" prefWidth="209.0" promptText="MM/DD/YYYY" />
+      <Label fx:id="lblStudentSignupErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="127.0" layoutY="159.0" prefHeight="34.0" prefWidth="358.0" text="Error Message" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
