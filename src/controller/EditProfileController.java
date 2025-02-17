@@ -42,6 +42,9 @@ public class EditProfileController {
 
     @FXML
     private TextField txtUserName;
+    
+    @FXML
+    private Button btnDeleteAccount;
 
     @FXML
     void btnChangePasswordOnAction(ActionEvent event) {
@@ -53,4 +56,8 @@ public class EditProfileController {
         System.out.println("Change Student Info");
     }
 
+    @FXML
+    void btnDeleteAccountOnAction(ActionEvent event) {
+        System.out.println("Delete Account");
+    }
 }

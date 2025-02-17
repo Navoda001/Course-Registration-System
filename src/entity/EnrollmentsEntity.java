@@ -6,15 +6,18 @@ public class EnrollmentsEntity {
     private String courseId;
     private String semester;
     private String enrollmentDate;
+    private int academicYear;
     
     public EnrollmentsEntity() {
     }
 
-    public EnrollmentsEntity(String studentId, String courseId, String semester, String enrollmentDate) {
+    public EnrollmentsEntity(String studentId, String courseId, String semester, String enrollmentDate,
+            int academicYear) {
         this.studentId = studentId;
         this.courseId = courseId;
         this.semester = semester;
         this.enrollmentDate = enrollmentDate;
+        this.academicYear = academicYear;
     }
 
     public String getStudentId() {
@@ -49,10 +52,18 @@ public class EnrollmentsEntity {
         this.enrollmentDate = enrollmentDate;
     }
 
+    public int getAcademicYear() {
+        return academicYear;
+    }
+
+    public void setAcademicYear(int academicYear) {
+        this.academicYear = academicYear;
+    }
+
     @Override
     public String toString() {
         return "EnrollmentsEntity [studentId=" + studentId + ", courseId=" + courseId + ", semester=" + semester
-                + ", enrollmentDate=" + enrollmentDate + "]";
+                + ", enrollmentDate=" + enrollmentDate + ", academicYear=" + academicYear + "]";
     }
 
     

@@ -3,26 +3,23 @@ package dto;
 public class StudentDto {
     private String studentId;
     private String studentName;
+    private String userName;
     private String studentDOB;
-    private String ProgramOfStudy;
     private String contactInfo;
-    private String academicYear;
     private String studentPassword;
 
     public StudentDto() {
     }
 
-    public StudentDto(String studentId, String studentName, String studentDOB, String programOfStudy,
-            String contactInfo, String academicYear, String studentPassword) {
+    public StudentDto(String studentId, String studentName, String userName, String studentDOB, String contactInfo,
+            String studentPassword) {
         this.studentId = studentId;
         this.studentName = studentName;
+        this.userName = userName;
         this.studentDOB = studentDOB;
-        ProgramOfStudy = programOfStudy;
         this.contactInfo = contactInfo;
-        this.academicYear = academicYear;
         this.studentPassword = studentPassword;
     }
-
 
     public String getStudentId() {
         return studentId;
@@ -41,24 +38,9 @@ public class StudentDto {
     }
 
 
-
-    public String getProgramOfStudy() {
-        return ProgramOfStudy;
-    }
-
-
-
     public String getContactInfo() {
         return contactInfo;
     }
-
-
-
-    public String getAcademicYear() {
-        return academicYear;
-    }
-
-
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
@@ -76,24 +58,9 @@ public class StudentDto {
         this.studentDOB = studentDOB;
     }
 
-
-
-    public void setProgramOfStudy(String programOfStudy) {
-        ProgramOfStudy = programOfStudy;
-    }
-
-
-
     public void setContactInfo(String contactInfo) {
         this.contactInfo = contactInfo;
     }
-
-
-
-    public void setAcademicYear(String academicYear) {
-        this.academicYear = academicYear;
-    }
-
 
     public String getStudentPassword() {
         return studentPassword;
@@ -103,12 +70,24 @@ public class StudentDto {
         this.studentPassword = studentPassword;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     @Override
     public String toString() {
-        return "StudentDto [studentId=" + studentId + ", studentName=" + studentName + ", studentDOB=" + studentDOB
-                + ", ProgramOfStudy=" + ProgramOfStudy + ", contactInfo=" + contactInfo + ", academicYear="
-                + academicYear + ", studentPassword=" + studentPassword + "]";
+        return "StudentDto [studentId=" + studentId + ", studentName=" + studentName + ", userName=" + userName
+                + ", studentDOB=" + studentDOB + ", contactInfo=" + contactInfo + ", studentPassword=" + studentPassword
+                + "]";
     }
+
+   
+
+   
 
     
 }

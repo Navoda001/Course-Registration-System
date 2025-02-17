@@ -9,11 +9,10 @@ DROP TABLE IF EXISTS students;
 CREATE TABLE students (
     studentId INT AUTO_INCREMENT PRIMARY KEY,
     studentName VARCHAR(100) NOT NULL,
+    userName VARCHAR(50) UNIQUE NOT NULL,
     dateOfBirth DATE NOT NULL,
-    programOfStudy VARCHAR(100),
-    year INT CHECK (year BETWEEN 1 AND 8),
     contactInfo VARCHAR(50) NOT NULL
-    password VARCHAR(255) NOT NULL, 
+    studentPassword VARCHAR(255) NOT NULL, 
 ) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
@@ -56,6 +55,7 @@ CREATE TABLE enrollments (
     studentId INT NOT NULL,
     courseId INT NOT NULL,
     semester VARCHAR(20) NOT NULL,
+    academicYear INT CHECK (year BETWEEN 1 AND 8),
     enrollmentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (studentId, courseId, semester),
     FOREIGN KEY (studentId) REFERENCES Students(studentId) ON DELETE CASCADE,
@@ -71,7 +71,7 @@ CREATE TABLE faculties (
     facultyId INT PRIMARY KEY AUTO_INCREMENT,
     facultyName VARCHAR(100) NOT NULL,
     contactInfo VARCHAR(255)
-    password VARCHAR(255) NOT NULL, 
+    facultyPassword VARCHAR(255) NOT NULL, 
 )AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
@@ -85,7 +85,7 @@ CREATE TABLE admins (
     facultyId INT,
     department VARCHAR(100) ,
     contact_info VARCHAR(255),
-    password VARCHAR(255) NOT NULL, 
+    adminPassword VARCHAR(255) NOT NULL, 
     FOREIGN KEY (facultyId) REFERENCES faculties(facultyId) ON DELETE SET NULL
 )AUTO_INCREMENT = 1000;
 
