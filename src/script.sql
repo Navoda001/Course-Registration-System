@@ -11,8 +11,9 @@ CREATE TABLE students (
     studentName VARCHAR(100) NOT NULL,
     dateOfBirth DATE NOT NULL,
     programOfStudy VARCHAR(100),
-    year INT CHECK (year BETWEEN 1 AND 8) NOT NULL,
+    year INT CHECK (year BETWEEN 1 AND 8),
     contactInfo VARCHAR(50) NOT NULL
+    password VARCHAR(255) NOT NULL, 
 ) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
@@ -70,6 +71,7 @@ CREATE TABLE faculties (
     facultyId INT PRIMARY KEY AUTO_INCREMENT,
     facultyName VARCHAR(100) NOT NULL,
     contactInfo VARCHAR(255)
+    password VARCHAR(255) NOT NULL, 
 )AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
@@ -83,6 +85,7 @@ CREATE TABLE admins (
     facultyId INT,
     department VARCHAR(100) ,
     contact_info VARCHAR(255),
+    password VARCHAR(255) NOT NULL, 
     FOREIGN KEY (facultyId) REFERENCES faculties(facultyId) ON DELETE SET NULL
 )AUTO_INCREMENT = 1000;
 
@@ -92,18 +95,18 @@ DESCRIBE admins;
 #====================================================================================================
 
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users (
-    userId INT PRIMARY KEY AUTO_INCREMENT,
-    userName VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL, 
-    entityId INT NOT NULL,  
-    entityType ENUM('student', 'faculty', 'admin'), 
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- DROP TABLE IF EXISTS users;
+-- CREATE TABLE users (
+--     userId INT PRIMARY KEY AUTO_INCREMENT,
+--     userName VARCHAR(50) UNIQUE NOT NULL,
+--     password VARCHAR(255) NOT NULL, 
+--     entityId INT NOT NULL,  
+--     entityType ENUM('student', 'faculty', 'admin'), 
+--     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
 
-SHOW TABLES;
-DESCRIBE Users;
+-- SHOW TABLES;
+-- DESCRIBE Users;
 
 
 
