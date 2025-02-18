@@ -30,7 +30,7 @@ CREATE TABLE courses (
 ) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
-DESCRIBE course;
+DESCRIBE courses;
 
 #====================================================================================================
 

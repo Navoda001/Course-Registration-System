@@ -46,9 +46,7 @@ public class CoursesDaoImpl implements CoursesDao {
         ArrayList<CoursesEntity> coursesEntities = new ArrayList<>();
         ResultSet rst = CrudUtil.executeQuery("SELECT * FROM courses");
         while (rst.next()) {            
-            coursesEntities.add(new CoursesEntity(rst.getString("courseId"), rst.getString("courseName"),
-                    rst.getInt("creditHours"), rst.getString("department"),
-                    rst.getString("prerequisites"), rst.getInt("enrollmentCapacity")));
+            coursesEntities.add(new CoursesEntity(rst.getString("courseId"),rst.getString("courseName")));
         }
         return coursesEntities;
     }

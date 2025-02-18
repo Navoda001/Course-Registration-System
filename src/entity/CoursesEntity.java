@@ -21,6 +21,10 @@ public class CoursesEntity {
         this.prerequisites = prerequisites;
         this.enrollmentCapacity = enrollmentCapacity;
     }
+    public CoursesEntity(String courseId,String courseTitle){
+        this.courseId = courseId;
+        this.courseTitle=courseTitle;
+    }
 
     public String getCourseId() {
         return courseId;
