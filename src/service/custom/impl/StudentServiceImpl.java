@@ -26,22 +26,22 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.save(studentEntity) ? "Success" : "Fail";
     }
 
+
     @Override
-    public String updateInfo(StudentDto studentDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateInfo'");
+    public String updateInfo(String studentId , StudentDto studentDto) throws Exception {
+
+        StudentEntity studentEntity = new StudentEntity(studentDto.getStudentName(),studentDto.getUserName(),studentDto.getStudentDOB(),studentDto.getContactInfo());
+        return studentDao.updateInfo( studentId ,  studentEntity) ? "Success" : "Fail";
     }
 
     @Override
-    public String updatePassword(StudentDto studentDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updatePassword'");
+    public String updatePassword(String studentId, String password) throws Exception {
+        return studentDao.updatePassword(studentId,password) ? "Success" : "Fail";
     }
 
     @Override
     public String delete(String id) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        return studentDao.delete(id) ? "Success" : "Fail";
     }
 
    

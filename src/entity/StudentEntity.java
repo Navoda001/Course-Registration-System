@@ -30,6 +30,13 @@ public class StudentEntity {
         this.studentPassword = studentPassword;
     }
 
+    public StudentEntity( String studentName, String userName, String studentDOB, String contactInfo) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+    }
+
     public StudentEntity(String userName, String studentPassword) {
         this.userName = userName;
         this.studentPassword = studentPassword;

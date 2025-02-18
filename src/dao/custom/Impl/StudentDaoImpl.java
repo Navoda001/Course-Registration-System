@@ -18,22 +18,22 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public boolean updateInfo(StudentEntity t) throws Exception {
+    public boolean updateInfo(String studentId ,StudentEntity t) throws Exception {
         return CrudUtil.executeUpdate(
                 "UPDATE students SET studentName = ?, userName=?, dateOfBirth=?, contactInfo=? WHERE studentId=?",
-                t.getStudentName(), t.getUserName(), t.getStudentDOB(), t.getContactInfo(), t.getStudentId());
+                t.getStudentName(), t.getUserName(), t.getStudentDOB(), t.getContactInfo(), studentId);
     }
 
     @Override
-    public boolean updatePassword(StudentEntity t) throws Exception {
+    public boolean updatePassword(String studentId, String password) throws Exception {
 
         return CrudUtil.executeUpdate("UPDATE students SET studentPassword = ? WHERE studentId=?",
-                t.getStudentPassword(), t.getStudentId());
+        password, studentId);
     }
 
     @Override
-    public boolean delete(String userName) throws Exception {
-        return CrudUtil.executeUpdate("DELETE FROM students WHERE studentId=?", userName);
+    public boolean delete(String StudentId) throws Exception {
+        return CrudUtil.executeUpdate("DELETE FROM students WHERE studentId=?", StudentId);
     }
 
     @Override

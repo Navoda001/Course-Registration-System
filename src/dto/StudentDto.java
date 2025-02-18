@@ -30,6 +30,13 @@ public class StudentDto {
         this.studentPassword = studentPassword;
     }
 
+    public StudentDto( String studentName, String userName, String studentDOB, String contactInfo) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+    }
+
     public StudentDto(String userName,String studentPassword) {
         this.userName = userName;
         this.studentPassword = studentPassword;

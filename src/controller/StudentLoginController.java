@@ -41,6 +41,7 @@ public class StudentLoginController {
     private TextField txtUsername;
 
     public static String studentUserName;
+    public static String studentName;
     public static String studentId;
 
     @FXML
@@ -63,6 +64,7 @@ public class StudentLoginController {
         System.out.println("STUDENT LOGIN");
 
         String userName = txtUsername.getText();
+
         String studentPassword = txtHiddenPassword.getText();
 
         try {
@@ -76,8 +78,10 @@ public class StudentLoginController {
                     lblStudentLoginErrorMessage.setText("UserName Not Found");
                 } else if (studentDto.getStudentPassword().equals(studentPassword)) {
 
-                    this.studentUserName = studentDto.getStudentName();
+                    this.studentName = studentDto.getStudentName();
+                    this.studentUserName = studentDto.getUserName();
                     this.studentId = studentDto.getStudentId();
+
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Success");
@@ -104,8 +108,8 @@ public class StudentLoginController {
 
     }
 
-    public String getUserName() {
-        return studentUserName;
+    public String getStudentName() {
+        return studentName;
 
     }
 
@@ -113,6 +117,12 @@ public class StudentLoginController {
         return studentId;
 
     }
+
+    public String getStudentUserName(){
+        return studentUserName;
+    }
+
+    public
 
     @FXML
     void lblSignupOnAction(MouseEvent event) throws IOException {

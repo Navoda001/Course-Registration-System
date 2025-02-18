@@ -43,26 +43,24 @@ public class StudentNavBarController {
     @FXML
     private Button btnSignOut;
 
-    private String studentUserName;
+    private String StudentName;
     private String studentId;
-  
 
-    public StudentNavBarController(){
+    public StudentNavBarController() {
         StudentLoginController s1 = new StudentLoginController();
-        this.studentUserName=s1.getUserName();
-        this.studentId=s1.getId();
+        this.StudentName = s1.getStudentName();
+        this.studentId = s1.getId();
     }
 
     @FXML
     public void initialize() throws IOException {
-        
+
         lblStudentId.setText(studentId);
-        lblStudentName.setText(studentUserName);
+        lblStudentName.setText(StudentName);
 
         studentFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Student/Dashboard.fxml"));
         studentFrame.getChildren().add(node);
-
 
     }
 
@@ -106,9 +104,14 @@ public class StudentNavBarController {
         studentFrame.getChildren().add(node);
     }
 
+    public AnchorPane getframe() {
+        return mainFrame;
+    }
+
     @FXML
     void btnSignOutOnAction(ActionEvent event) throws IOException {
         System.out.println("Sign Out");
+
         mainFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
         mainFrame.getChildren().add(node);
