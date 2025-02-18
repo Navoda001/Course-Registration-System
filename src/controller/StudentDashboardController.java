@@ -11,10 +11,18 @@ public class StudentDashboardController {
     @FXML
     private Label lblStudentName;
 
-    @FXML
-    public void initialize() {
-        lblStudentName.setText("John Doe");
-        lblStudentId.setText("123456");
+    private String studentName;
+    private String studentId;
+    
+    public StudentDashboardController(){
+        StudentLoginController s1 = new StudentLoginController();
+        this.studentName=s1.getStudentName();
+        this.studentId=s1.getId();
     }
 
+    @FXML
+    public void initialize() {
+        lblStudentName.setText(studentName);
+        lblStudentId.setText(studentId);
+    }
 }
