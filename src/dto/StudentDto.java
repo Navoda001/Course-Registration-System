@@ -21,22 +21,31 @@ public class StudentDto {
         this.studentPassword = studentPassword;
     }
 
+    public StudentDto( String studentName, String userName, String studentDOB, String contactInfo,
+            String studentPassword) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+        this.studentPassword = studentPassword;
+    }
+
+    public StudentDto(String userName,String studentPassword) {
+        this.userName = userName;
+        this.studentPassword = studentPassword;
+    }
+
     public String getStudentId() {
         return studentId;
     }
-
-
 
     public String getStudentName() {
         return studentName;
     }
 
-
-
     public String getStudentDOB() {
         return studentDOB;
     }
-
 
     public String getContactInfo() {
         return contactInfo;
@@ -46,13 +55,9 @@ public class StudentDto {
         this.studentId = studentId;
     }
 
-
-
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
-
-
 
     public void setStudentDOB(String studentDOB) {
         this.studentDOB = studentDOB;
@@ -85,9 +90,4 @@ public class StudentDto {
                 + "]";
     }
 
-   
-
-   
-
-    
 }

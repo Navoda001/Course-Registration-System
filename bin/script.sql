@@ -11,21 +11,21 @@ CREATE TABLE students (
     studentName VARCHAR(100) NOT NULL,
     userName VARCHAR(50) UNIQUE NOT NULL,
     dateOfBirth DATE NOT NULL,
-    contactInfo VARCHAR(50) NOT NULL
-    studentPassword VARCHAR(255) NOT NULL, 
+    contactInfo VARCHAR(50) NOT NULL,
+    studentPassword VARCHAR(255) NOT NULL
 ) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
-DESCRIBE student;
+DESCRIBE students;
 
 #====================================================================================================
 DROP TABLE IF EXISTS courses;
 CREATE TABLE courses (
     courseId INT AUTO_INCREMENT PRIMARY KEY,
-    courseTitle VARCHAR(50) NOT NULL,
+    courseName VARCHAR(50) NOT NULL,
     creditHours INT NOT NULL,
     department VARCHAR(50) NOT NULL,
-    prerequisites VARCHAR(50),
+    prerequisites VARCHAR(200),
     enrollmentCapacity INT NOT NULL
 ) AUTO_INCREMENT = 1000;
 

@@ -7,11 +7,9 @@ public class StudentEntity {
     private String studentDOB;
     private String contactInfo;
     private String studentPassword;
-    
+
     public StudentEntity() {
     }
-
-    
 
     public StudentEntity(String studentId, String studentName, String userName, String studentDOB, String contactInfo,
             String studentPassword) {
@@ -23,7 +21,19 @@ public class StudentEntity {
         this.studentPassword = studentPassword;
     }
 
+    public StudentEntity(String studentName, String userName, String studentDOB, String contactInfo,
+            String studentPassword) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+        this.studentPassword = studentPassword;
+    }
 
+    public StudentEntity(String userName, String studentPassword) {
+        this.userName = userName;
+        this.studentPassword = studentPassword;
+    }
 
     public String getStudentId() {
         return studentId;
@@ -40,7 +50,7 @@ public class StudentEntity {
     public String getContactInfo() {
         return contactInfo;
     }
-    
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
@@ -65,18 +75,13 @@ public class StudentEntity {
         this.studentPassword = studentPassword;
     }
 
-
     public String getUserName() {
         return userName;
     }
 
-
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-
 
     @Override
     public String toString() {
@@ -85,6 +90,4 @@ public class StudentEntity {
                 + "]";
     }
 
-
-    
 }
