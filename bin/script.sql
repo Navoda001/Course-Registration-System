@@ -30,7 +30,7 @@ CREATE TABLE courses (
 ) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
-DESCRIBE course;
+DESCRIBE courses;
 
 #====================================================================================================
 
@@ -55,10 +55,10 @@ CREATE TABLE enrollments (
     studentId INT NOT NULL,
     courseId INT NOT NULL,
     semester VARCHAR(20) NOT NULL,
-    academicYear INT CHECK (year BETWEEN 1 AND 8),
-    enrollmentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (studentId, courseId, semester),
-    FOREIGN KEY (studentId) REFERENCES Students(studentId) ON DELETE CASCADE,
+    academicYear INT Not NULL,
+    enrollmentDate DATE NOT NULL,
+    PRIMARY KEY (studentId, courseId),
+    FOREIGN KEY (studentId) REFERENCES students(studentId) ON DELETE CASCADE,
     FOREIGN KEY (courseId) REFERENCES courses(courseId) ON DELETE CASCADE
 );
 

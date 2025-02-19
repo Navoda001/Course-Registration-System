@@ -1,6 +1,8 @@
 package service;
 
 import dao.custom.Impl.StudentDaoImpl;
+import service.custom.impl.CoursesServiceImpl;
+import service.custom.impl.EnrollmentServiceImpl;
 import service.custom.impl.StudentServiceImpl;
 
 public class ServiceFactory {
@@ -26,17 +28,17 @@ public class ServiceFactory {
             case FACULTY:
                 return null;
             case COURSE:
+                return new CoursesServiceImpl();
+            case ACADEMICRECORD:
                 return null;
-            case AcademicRecord:
-                return null;
-            case Enrollment:
-                return null;
+            case ENROLLMENT:
+                return new EnrollmentServiceImpl();
             default:
                 return null;
         }
     }
 
     public enum ServiceType {
-        ADMIN, STUDENT, FACULTY, Enrollment, COURSE, AcademicRecord
+        ADMIN, STUDENT, FACULTY, ENROLLMENT, COURSE, ACADEMICRECORD
     }
 }

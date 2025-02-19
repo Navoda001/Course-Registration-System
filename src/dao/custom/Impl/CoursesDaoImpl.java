@@ -1,6 +1,5 @@
 package dao.custom.Impl;
 
-import java.security.CodeSource;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -16,6 +15,10 @@ public class CoursesDaoImpl implements CoursesDao {
                 "INSERT INTO courses (courseName, creditHours, department, prerequisites, enrollmentCapacity) VALUES (?,?,?,?,?)",
                 t.getCourseTitle(), t.getCreditHours(), t.getDepartment(), t.getPrerequisites(),
                 t.getEnrollmentCapacity());
+    }
+
+    public boolean saveAfterEnroll(String courseId,int enrollmentCapacity) throws Exception{
+        return CrudUtil.executeUpdate("UPDATE courses SET enrollmentCapacity=? WHERE courseId=?", enrollmentCapacity,courseId);
     }
 
     @Override
@@ -46,9 +49,7 @@ public class CoursesDaoImpl implements CoursesDao {
         ArrayList<CoursesEntity> coursesEntities = new ArrayList<>();
         ResultSet rst = CrudUtil.executeQuery("SELECT * FROM courses");
         while (rst.next()) {            
-            coursesEntities.add(new CoursesEntity(rst.getString("courseId"), rst.getString("courseName"),
-                    rst.getInt("creditHours"), rst.getString("department"),
-                    rst.getString("prerequisites"), rst.getInt("enrollmentCapacity")));
+            coursesEntities.add(new CoursesEntity(rst.getString("courseId"),rst.getString("courseName")));
         }
         return coursesEntities;
     }

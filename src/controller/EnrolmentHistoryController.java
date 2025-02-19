@@ -27,6 +27,9 @@ public class EnrolmentHistoryController {
     @FXML
     private TableColumn<?, ?> tableSemester;
 
+    @FXML
+    private TableColumn<?, ?> tableAcademicYear;
+
 
     @FXML
     void selectCourseOnAction(MouseEvent event) throws IOException {

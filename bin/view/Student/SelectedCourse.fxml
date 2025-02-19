@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectedCourseController">
+<AnchorPane fx:id="selectCourseFrame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectedCourseController">
    <children>
-      <Label fx:id="lblCourseName" layoutX="185.0" layoutY="14.0" text="Course Name">
+      <Label fx:id="lblCourseName" layoutX="140.0" layoutY="14.0" text="Course Name">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCourseId" layoutX="84.0" layoutY="14.0" text="Course Id :">
+      <Label fx:id="lblCourseId" layoutX="39.0" layoutY="14.0" text="Course Id :">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -34,28 +34,28 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblPrerequisitesDescription" contentDisplay="CENTER" layoutX="149.0" layoutY="203.0" prefHeight="27.0" prefWidth="198.0" text="Description&#10;">
+      <Label fx:id="lblPrerequisitesDescription" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="149.0" layoutY="203.0" prefHeight="80.0" prefWidth="222.0" text="Description&#10;&#10;&#10;&#10;&#10;2626&#10;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <RadioButton fx:id="btnPrerequisitesYes" layoutX="183.0" layoutY="268.0" mnemonicParsing="false" text="Yes">
+      <RadioButton fx:id="btnPrerequisitesYes" layoutX="183.0" layoutY="287.0" mnemonicParsing="false" text="Yes">
          <toggleGroup>
             <ToggleGroup fx:id="prerequisites" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="btnPrerequisitesNo" layoutX="255.0" layoutY="269.0" mnemonicParsing="false" text="No" toggleGroup="$prerequisites" />
+      <RadioButton fx:id="btnPrerequisitesNo" layoutX="255.0" layoutY="288.0" mnemonicParsing="false" text="No" toggleGroup="$prerequisites" />
       <Label fx:id="lblCreditHours" layoutX="149.0" layoutY="121.0" prefHeight="27.0" prefWidth="94.0" text="45">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblDepartmentName" layoutX="149.0" layoutY="163.0" prefHeight="27.0" prefWidth="210.0" text="Department Name">
+      <Label fx:id="lblDepartmentName" layoutX="149.0" layoutY="162.0" prefHeight="27.0" prefWidth="210.0" text="Department Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblPrerequisitesErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="297.0" prefHeight="34.0" prefWidth="354.0" text="Error Message" textFill="RED">
+      <Label fx:id="lblPrerequisitesErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="308.0" prefHeight="34.0" prefWidth="354.0" text="Error Message" textFill="RED">
          <font>
             <Font size="14.0" />
          </font>

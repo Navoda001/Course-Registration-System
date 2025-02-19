@@ -21,6 +21,11 @@ public class CoursesDto {
         this.enrollmentCapacity = enrollmentCapacity;
     }
 
+    public CoursesDto(String courseId,String courseTitle){
+        this.courseId = courseId;
+        this.courseTitle=courseTitle;
+    }
+
     public String getCourseId() {
         return courseId;
     }

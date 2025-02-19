@@ -1,5 +1,7 @@
 package dao;
 
+import dao.custom.Impl.CoursesDaoImpl;
+import dao.custom.Impl.EnrollmentDaoImpl;
 import dao.custom.Impl.StudentDaoImpl;
 
 public class DaoFactory {
@@ -25,17 +27,17 @@ public class DaoFactory {
             case FACULTY:
                 return null;
             case COURSE:
+                return  new CoursesDaoImpl();
+            case ACADEMICRECORD:
                 return  null;
-            case AcademicRecord:
-                return  null;
-            case Enrollment:
-                return null;    
+            case ENROLLMENT:
+                return new EnrollmentDaoImpl();    
             default:
                 return null;
         }
     }
 
     public enum DaoType {
-        ADMIN, STUDENT, FACULTY, Enrollment, COURSE, AcademicRecord
+        ADMIN, STUDENT, FACULTY, ENROLLMENT, COURSE, ACADEMICRECORD
     }
 }
