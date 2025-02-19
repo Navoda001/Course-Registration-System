@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import dao.DaoFactory;
 import dao.custom.CoursesDao;
 import dto.CoursesDto;
-import dto.StudentDto;
 import entity.CoursesEntity;
 import entity.StudentEntity;
 import service.custom.CoursesService;
-import service.custom.StudentService;
 
 public class CoursesServiceImpl implements CoursesService {
 
@@ -20,6 +18,10 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
     public String save(CoursesDto coursesDto) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
+    }
+
+    public String saveAfterEnroll(String CourseId,int enrollmentCapacity  ) throws Exception {
+        return coursesDao.saveAfterEnroll(CourseId,enrollmentCapacity) ? "Success" : "Fail";
     }
 
     @Override
@@ -43,6 +45,8 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
         }
         return null;
     }
+
+
 
     @Override
     public ArrayList<CoursesDto> getAll() throws Exception {

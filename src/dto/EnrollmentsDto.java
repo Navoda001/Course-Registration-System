@@ -6,13 +6,20 @@ public class EnrollmentsDto {
     private String courseId;
     private String semester;
     private String enrollmentDate;
-    private int academicYear;
+    private String academicYear;
     
     public EnrollmentsDto() {
     }
 
-    public EnrollmentsDto(String studentId, String courseId, String semester, String enrollmentDate, int academicYear) {
+    public EnrollmentsDto(String studentId, String courseId, String semester, String enrollmentDate, String academicYear) {
         this.studentId = studentId;
+        this.courseId = courseId;
+        this.semester = semester;
+        this.enrollmentDate = enrollmentDate;
+        this.academicYear = academicYear;
+    }
+
+    public EnrollmentsDto(String courseId, String semester, String enrollmentDate, String academicYear) {
         this.courseId = courseId;
         this.semester = semester;
         this.enrollmentDate = enrollmentDate;
@@ -52,11 +59,11 @@ public class EnrollmentsDto {
         this.enrollmentDate = enrollmentDate;
     }
 
-    public int getAcademicYear() {
+    public String getAcademicYear() {
         return academicYear;
     }
 
-    public void setAcademicYear(int academicYear) {
+    public void setAcademicYear(String academicYear) {
         this.academicYear = academicYear;
     }
 
@@ -65,6 +72,5 @@ public class EnrollmentsDto {
         return "EnrollmentsDto [studentId=" + studentId + ", courseId=" + courseId + ", semester=" + semester
                 + ", enrollmentDate=" + enrollmentDate + ", academicYear=" + academicYear + "]";
     }
-    
     
 }

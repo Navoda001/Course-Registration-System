@@ -15,9 +15,10 @@
       </Label>
       <TableView fx:id="tableEnrolmentHistory" layoutX="8.0" layoutY="84.0" prefHeight="214.0" prefWidth="400.0">
         <columns>
-          <TableColumn fx:id="tableCourseId" prefWidth="129.5999755859375" text="Course ID" />
-          <TableColumn fx:id="tableEnrolmentDate" prefWidth="152.00006103515625" text="Enrolment Date" />
-            <TableColumn fx:id="tableSemester" prefWidth="117.60003662109375" text="Semester" />
+          <TableColumn fx:id="tableCourseId" prefWidth="71.20001220703125" text="Course ID" />
+          <TableColumn fx:id="tableEnrolmentDate" prefWidth="107.20001220703125" text="Enrolment Date" />
+            <TableColumn fx:id="tableSemester" prefWidth="120.0" text="Semester" />
+            <TableColumn fx:id="tableAcademicYear" prefWidth="99.199951171875" text="Academic Year" />
         </columns>
       </TableView>
       <AnchorPane fx:id="EnrolmentFrame" layoutX="11.0" layoutY="318.0" prefHeight="280.0" prefWidth="394.0" />
