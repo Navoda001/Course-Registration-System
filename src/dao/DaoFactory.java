@@ -3,6 +3,7 @@ package dao;
 import dao.custom.Impl.AcademicRecordDaoImpl;
 import dao.custom.Impl.CoursesDaoImpl;
 import dao.custom.Impl.EnrollmentDaoImpl;
+import dao.custom.Impl.FacultyDaoImpl;
 import dao.custom.Impl.StudentDaoImpl;
 
 public class DaoFactory {
@@ -26,7 +27,7 @@ public class DaoFactory {
             case STUDENT:
                 return  new StudentDaoImpl();
             case FACULTY:
-                return null;
+                return new FacultyDaoImpl();
             case COURSE:
                 return  new CoursesDaoImpl();
             case ACADEMICRECORD:

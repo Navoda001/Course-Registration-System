@@ -142,6 +142,7 @@ public class SelectedCourseController {
 
         } else {
             System.out.println("No option selected");
+            lblPrerequisitesErrorMessage.setText("Enrollment Failed");
         }
     }
 

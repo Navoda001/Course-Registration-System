@@ -3,6 +3,7 @@ package service;
 import service.custom.impl.AcademicRecordServiceImpl;
 import service.custom.impl.CoursesServiceImpl;
 import service.custom.impl.EnrollmentServiceImpl;
+import service.custom.impl.FacultyServiceImpl;
 import service.custom.impl.StudentServiceImpl;
 
 public class ServiceFactory {
@@ -26,7 +27,7 @@ public class ServiceFactory {
             case STUDENT:
                 return new StudentServiceImpl();
             case FACULTY:
-                return null;
+                return new FacultyServiceImpl();
             case COURSE:
                 return new CoursesServiceImpl();
             case ACADEMICRECORD:

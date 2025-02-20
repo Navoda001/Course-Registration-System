@@ -2,10 +2,13 @@ package controller;
 
 import java.io.IOException;
 
+import dto.FacultyDto;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -14,6 +17,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
+import service.custom.FacultyService;
+import service.custom.impl.FacultyServiceImpl;
 
 public class AdminLoginController {
 
@@ -43,25 +49,84 @@ public class AdminLoginController {
 
     @FXML
     private Label lblAdminLoginErrorMessage;
-    
+
     @FXML
     private TextField txtUsername;
 
-    @FXML
-    void btnBackToMainOnAction(ActionEvent event) throws IOException {
-    System.out.println("Back to main menu");
-    adminLoginPage.getChildren().clear();
-    Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
-    adminLoginPage.getChildren().add(node);
+    private static FacultyDto passFacultyDto;
+
+    private static String role;
+
+    private FacultyDto facultyDto;
+
+    public void initialize() {
+        lblAdminLoginErrorMessage.setText("");
     }
 
     @FXML
-    void btnUserLoginOnAction(ActionEvent event) throws IOException {
-        System.out.println("login ");
+    void btnBackToMainOnAction(ActionEvent event) throws IOException {
+        System.out.println("Back to main menu");
         adminLoginPage.getChildren().clear();
-        Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
+        Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
         adminLoginPage.getChildren().add(node);
-        
+    }
+
+    @FXML
+    void btnUserLoginOnAction(ActionEvent event) throws Exception {
+        System.out.println("login ");
+
+        String userName = txtUsername.getText();
+        String password = txtHiddenPassword.getText();
+
+        try {
+            if (btnFaculty.isSelected()) {
+                if (userName.equals("") || password.equals("")) {
+                    lblAdminLoginErrorMessage.setText("Please Enter  the Credentials.");
+                } else {
+                    FacultyService f1 = new FacultyServiceImpl();
+                    this.facultyDto = f1.search(userName);
+
+                    if (facultyDto == null) {
+                        lblAdminLoginErrorMessage.setText("UserName not found!");
+                    } else if (password.equals(facultyDto.getFacultyPassword())) {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Success");
+                        alert.setHeaderText(null);
+                        alert.setContentText("LogIn Successfully!");
+                        alert.show();
+
+                        PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                        delay.setOnFinished(actionEvent -> alert.close());
+                        delay.play();
+
+                        AdminLoginController.role="Faculty";
+
+                        adminLoginPage.getChildren().clear();
+                        Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
+                        adminLoginPage.getChildren().add(node);
+                    }
+                }
+            } else if (btnAdmin.isSelected()) {
+                // admin
+
+            } else {
+                System.out.println("No option selected");
+                lblAdminLoginErrorMessage
+                        .setText("Login Failed: Please choose your role (e.g.Faculty, Admin) to proceed.");
+            }
+
+        } catch (Exception e) {
+            lblAdminLoginErrorMessage.setText("Unknown Error");
+        }
+
+    }
+
+    public FacultyDto getDto() {
+        return passFacultyDto;
+    }
+
+    public String getrole(){
+        return role;
     }
 
 }
