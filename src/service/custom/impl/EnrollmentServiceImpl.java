@@ -35,8 +35,8 @@ private EnrollmentDao enrollmentDao =  (EnrollmentDao) DaoFactory.getInstance().
     public ArrayList<EnrollmentsDto> getAll(String StudentID) throws Exception {
         ArrayList<EnrollmentsDto> enrollmentsDtos = new ArrayList<>();
         ArrayList<EnrollmentsEntity> enrollmentsEntities = enrollmentDao.getAll(StudentID);
-        for (EnrollmentsEntity coursesEntity : enrollmentsEntities) {
-            EnrollmentsDto dto = new EnrollmentsDto(coursesEntity.getCourseId(),coursesEntity.getSemester(),coursesEntity.getAcademicYear(),coursesEntity.getEnrollmentDate());
+        for (EnrollmentsEntity enrollmentsEntity : enrollmentsEntities) {
+            EnrollmentsDto dto = new EnrollmentsDto(enrollmentsEntity.getCourseId(),enrollmentsEntity.getSemester(),enrollmentsEntity.getAcademicYear(),enrollmentsEntity.getEnrollmentDate());
             enrollmentsDtos.add(dto);
     }
     return enrollmentsDtos;

@@ -56,7 +56,7 @@ public class SelectedCourseController {
     @FXML
     private ToggleGroup prerequisites;
 
-    private String courseId;
+    private  String  courseId;
     private String studentId;
 
     public void initialize() throws Exception {

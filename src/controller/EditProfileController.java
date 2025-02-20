@@ -1,21 +1,17 @@
 package controller;
 
-import java.net.Socket;
 import java.time.LocalDate;
 
 import dto.StudentDto;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import service.custom.StudentService;
 import service.custom.impl.StudentServiceImpl;
@@ -57,8 +53,6 @@ public class EditProfileController {
 
     @FXML
     private Button btnDeleteAccount;
-
-    private AnchorPane mainframe;
 
     private String studentUserName;
     private String studentId;
@@ -107,9 +101,8 @@ public class EditProfileController {
                     alert.setContentText("Password Changed Successfully!");
                     alert.show();
 
-                    // Close the alert after 10 milliseconds
                     PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                    delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                    delay.setOnFinished(actionEvent -> alert.close()); 
                     delay.play();
                     txtCurrentPassword.setText("");
                     txtConfirmPassword.setText("");
@@ -149,9 +142,8 @@ public class EditProfileController {
                     alert.setContentText("Update Successfully!");
                     alert.show();
 
-                    // Close the alert after 10 milliseconds
                     PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                    delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                    delay.setOnFinished(actionEvent -> alert.close()); 
                     delay.play();
                 }
                 lblUpdateErrorMessage.setText("");
@@ -182,7 +174,7 @@ public class EditProfileController {
 
                 // Close the alert after 10 milliseconds
                 PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                delay.setOnFinished(actionEvent -> alert.close()); 
                 delay.play();
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -193,7 +185,7 @@ public class EditProfileController {
 
                 // Close the alert after 10 milliseconds
                 PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                delay.setOnFinished(actionEvent -> alert.close()); 
                 delay.play();
             }
         } catch (Exception e) {
@@ -203,9 +195,8 @@ public class EditProfileController {
             alert.setContentText("Unknown Error");
             alert.show();
 
-            // Close the alert after 10 milliseconds
             PauseTransition delay = new PauseTransition(Duration.millis(3000));
-            delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+            delay.setOnFinished(actionEvent -> alert.close()); 
             delay.play();
         }
 

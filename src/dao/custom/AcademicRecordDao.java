@@ -1,8 +1,8 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.AcademicRecordCrudDao;
 import entity.AcademicRecordEntity;
 
-public interface AcademicRecordDao extends CrudDao<AcademicRecordEntity, String> {
+public interface AcademicRecordDao extends AcademicRecordCrudDao<AcademicRecordEntity, String> {
 
 }

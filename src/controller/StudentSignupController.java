@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import javax.swing.JOptionPane;
 
 import dto.StudentDto;
 import javafx.animation.PauseTransition;
@@ -22,9 +21,6 @@ import javafx.scene.layout.AnchorPane;
 import service.custom.StudentService;
 import service.custom.impl.StudentServiceImpl;
 
-
-import javafx.animation.PauseTransition;
-import javafx.scene.control.Alert;
 import javafx.util.Duration;
 public class StudentSignupController {
 

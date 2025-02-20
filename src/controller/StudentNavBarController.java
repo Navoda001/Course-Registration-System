@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import dto.StudentDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +38,7 @@ public class StudentNavBarController {
 
     @FXML
     private AnchorPane studentFrame;
+    private static  AnchorPane staticStudentFrame;
 
     @FXML
     private Button btnSignOut;
@@ -104,7 +104,7 @@ public class StudentNavBarController {
         studentFrame.getChildren().add(node);
     }
 
-    public AnchorPane getframe() {
+    public AnchorPane getMainFrame() {
         return mainFrame;
     }
 
@@ -115,5 +115,11 @@ public class StudentNavBarController {
         mainFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
         mainFrame.getChildren().add(node);
+    }
+
+    public AnchorPane getFrame(){
+        staticStudentFrame = studentFrame;
+        return staticStudentFrame;
+
     }
 }
