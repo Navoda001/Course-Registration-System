@@ -1,6 +1,6 @@
 package service;
 
-import dao.custom.Impl.StudentDaoImpl;
+import service.custom.impl.AcademicRecordServiceImpl;
 import service.custom.impl.CoursesServiceImpl;
 import service.custom.impl.EnrollmentServiceImpl;
 import service.custom.impl.StudentServiceImpl;
@@ -30,7 +30,7 @@ public class ServiceFactory {
             case COURSE:
                 return new CoursesServiceImpl();
             case ACADEMICRECORD:
-                return null;
+                return new AcademicRecordServiceImpl();
             case ENROLLMENT:
                 return new EnrollmentServiceImpl();
             default:

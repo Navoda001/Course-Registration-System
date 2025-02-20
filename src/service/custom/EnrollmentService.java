@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import dto.CoursesDto;
 import dto.EnrollmentsDto;
-import dto.StudentDto;
 import service.SuperService;
 
 public interface EnrollmentService extends SuperService {

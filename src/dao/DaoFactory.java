@@ -1,5 +1,6 @@
 package dao;
 
+import dao.custom.Impl.AcademicRecordDaoImpl;
 import dao.custom.Impl.CoursesDaoImpl;
 import dao.custom.Impl.EnrollmentDaoImpl;
 import dao.custom.Impl.StudentDaoImpl;
@@ -29,7 +30,7 @@ public class DaoFactory {
             case COURSE:
                 return  new CoursesDaoImpl();
             case ACADEMICRECORD:
-                return  null;
+                return  new AcademicRecordDaoImpl();
             case ENROLLMENT:
                 return new EnrollmentDaoImpl();    
             default:

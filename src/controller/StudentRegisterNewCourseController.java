@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,6 @@ import dto.CoursesDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +25,7 @@ public class StudentRegisterNewCourseController {
     private Button btnCourseSearch;
 
     @FXML
-    private ListView<String> listCourses; // ListView contains course titles
+    private ListView<String> listCourses;
 
     @FXML
     private AnchorPane registerForm;
@@ -37,27 +35,27 @@ public class StudentRegisterNewCourseController {
 
     private ObservableList<String> courseList = FXCollections.observableArrayList();
     private FilteredList<String> filteredList;
-    private Map<String, String> courseMap = new HashMap<>(); // Map to store Course Title → Course ID
+    private Map<String, String> courseMap = new HashMap<>(); 
 
     private static String courseId;
 
     private CoursesService coursesService = new CoursesServiceImpl();
 
     public void initialize() throws Exception {
-        loadCourses(); // Load courses from the database
-        setupSearch(); // Enable search functionality
-        setupSelectionListener(); // Handle course selection
+        loadCourses(); 
+        setupSearch(); 
+        setupSelectionListener(); 
     }
 
     private void loadCourses() throws Exception {
-        ArrayList<CoursesDto> courses = coursesService.getAll(); // Fetch courses
+        ArrayList<CoursesDto> courses = coursesService.getAll(); 
 
         for (CoursesDto course : courses) {
             String courseTitle = course.getCourseTitle();
             String courseId = course.getCourseId();
 
-            courseList.add(courseTitle); // Populate ListView with course titles
-            courseMap.put(courseTitle, courseId); // Store Course Title → Course ID mapping
+            courseList.add(courseTitle); 
+            courseMap.put(courseTitle, courseId); 
         }
 
         filteredList = new FilteredList<>(courseList, s -> true);
@@ -66,8 +64,8 @@ public class StudentRegisterNewCourseController {
 
     private void setupSearch() {
         txtSearchCourses.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(course -> course.toLowerCase().contains(newValue.toLowerCase()) // Real-time
-                                                                                                      // filtering
+            filteredList.setPredicate(course -> course.toLowerCase().contains(newValue.toLowerCase()) 
+                                                                                                     
             );
         });
     }
@@ -80,7 +78,7 @@ public class StudentRegisterNewCourseController {
             try {
 
                 if (selectedCourseTitle != null) {
-                    String selectedCourseId = courseMap.get(selectedCourseTitle); // Get Course ID from Map
+                    String selectedCourseId = courseMap.get(selectedCourseTitle); 
                     System.out.println("Selected Course: " + selectedCourseTitle);
                     System.out.println("Course ID: " + selectedCourseId);
     
@@ -90,7 +88,6 @@ public class StudentRegisterNewCourseController {
                     registerForm.getChildren().clear();
                     Parent node = FXMLLoader.load(getClass().getResource("../view/Student/SelectedCourse.fxml"));
                     registerForm.getChildren().add(node);
-                    // You can store the selected course ID for further use
                 }
                 
             } catch (Exception e) {

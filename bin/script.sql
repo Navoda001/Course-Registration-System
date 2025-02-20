@@ -41,7 +41,7 @@ CREATE TABLE academic_records (
     semester VARCHAR(20) NOT NULL,
     grade CHAR(2) NOT NULL,
     PRIMARY KEY (studentId, courseId, semester), 
-    FOREIGN KEY (studentId) REFERENCES Students(studentId) ON DELETE CASCADE,
+    FOREIGN KEY (studentId) REFERENCES students(studentId) ON DELETE CASCADE,
     FOREIGN KEY (courseId) REFERENCES courses(courseId) ON DELETE CASCADE
 );
 
