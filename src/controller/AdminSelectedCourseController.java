@@ -124,9 +124,9 @@ public class AdminSelectedCourseController {
                 CoursesDto coursesDto = new CoursesDto(courseName, creditHours, department, prerequisites,
                         enrollmentCapacity);
                 System.out.println(coursesDto);
-
-                CoursesService coursesService = new CoursesServiceImpl();
-                String courseSave = coursesService.save(coursesDto);
+                System.out.println(courseId);
+                CoursesService coursesService2 = new CoursesServiceImpl();
+                String courseSave = coursesService2.Update(courseId, coursesDto);
 
                 System.out.println(courseSave);
 

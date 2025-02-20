@@ -58,6 +58,15 @@ public class EditEnrolmentController {
         String delete = enrollmentService.Delete(studentId, courseId);
         System.out.println(delete);
         if (delete.equals("Success")) {
+
+            CoursesService coursesService = new CoursesServiceImpl();
+            CoursesDto coursesDto = coursesService.search(courseId);
+            int enrollmentCapacity = coursesDto.getEnrollmentCapacity();
+            enrollmentCapacity = enrollmentCapacity + 1;
+            CoursesService coursesService2 = new CoursesServiceImpl();
+            String courseUpdate = coursesService2.saveAfterEnroll(courseId, enrollmentCapacity);
+            System.out.println(courseUpdate);
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);

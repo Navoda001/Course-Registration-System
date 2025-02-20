@@ -6,7 +6,6 @@ import dao.DaoFactory;
 import dao.custom.CoursesDao;
 import dto.CoursesDto;
 import entity.CoursesEntity;
-import entity.StudentEntity;
 import service.custom.CoursesService;
 
 public class CoursesServiceImpl implements CoursesService {
@@ -25,9 +24,9 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
     }
 
     @Override
-    public String Update(CoursesDto coursesDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+    public String Update( String courseId , CoursesDto coursesDto) throws Exception {
+        CoursesEntity coursesEntity = new CoursesEntity(coursesDto.getCourseTitle(),coursesDto.getCreditHours(),coursesDto.getDepartment(),coursesDto.getPrerequisites(),coursesDto.getEnrollmentCapacity());
+        return coursesDao.update(courseId,coursesEntity) ? "Success" : "Fail";
     }
 
     @Override

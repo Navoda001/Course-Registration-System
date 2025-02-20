@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import dao.DaoFactory;
 import dao.custom.EnrollmentDao;
-import dto.CoursesDto;
 import dto.EnrollmentsDto;
 import entity.EnrollmentsEntity;
 import service.custom.EnrollmentService;
@@ -26,9 +25,8 @@ private EnrollmentDao enrollmentDao =  (EnrollmentDao) DaoFactory.getInstance().
     }
 
     @Override
-    public CoursesDto search(String StudentID, String coursesId) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'search'");
+    public int search(String coursesId) throws Exception {
+        return enrollmentDao.search(coursesId);
     }
 
     @Override

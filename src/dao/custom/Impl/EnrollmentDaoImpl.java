@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import dao.CrudUtil;
 import dao.custom.EnrollmentDao;
-import dto.EnrollmentsDto;
 import entity.EnrollmentsEntity;
 
 public class EnrollmentDaoImpl implements EnrollmentDao{
@@ -27,9 +26,14 @@ public class EnrollmentDaoImpl implements EnrollmentDao{
     }
 
     @Override
-    public EnrollmentsDto search(String StudentID, String coursesId) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'search'");
+    public int search(String coursesId) throws Exception {
+        String sql = "SELECT COUNT(*) FROM enrollments WHERE courseId = ?";
+        ResultSet resultSet = CrudUtil.executeQuery(sql, coursesId);
+        
+        if (resultSet.next()) {
+            return resultSet.getInt(1); // Get the count value
+        }
+        return 0; 
     }
 
     @Override
