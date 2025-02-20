@@ -102,7 +102,7 @@ public class EditProfileController {
                     alert.show();
 
                     PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                    delay.setOnFinished(actionEvent -> alert.close()); 
+                    delay.setOnFinished(actionEvent -> alert.close());
                     delay.play();
                     txtCurrentPassword.setText("");
                     txtConfirmPassword.setText("");
@@ -143,7 +143,7 @@ public class EditProfileController {
                     alert.show();
 
                     PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                    delay.setOnFinished(actionEvent -> alert.close()); 
+                    delay.setOnFinished(actionEvent -> alert.close());
                     delay.play();
                 }
                 lblUpdateErrorMessage.setText("");
@@ -160,45 +160,66 @@ public class EditProfileController {
     @FXML
     void btnDeleteAccountOnAction(ActionEvent event) throws Exception {
         System.out.println("Delete Account");
-        try {
-            StudentService studentService = new StudentServiceImpl();
-            String deleteAccount = studentService.delete(studentId);
-            System.out.println(deleteAccount);
 
-            if (deleteAccount.equals("Success")) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Success");
-                alert.setHeaderText(null);
-                alert.setContentText("Account delete Successfully!  please click SignOut button");
-                alert.show();
+        String password = txtPassword.getText();
+        String confirmPassword = txtConfirmPassword.getText();
+        StudentService studentService2 = new StudentServiceImpl();
+            studentDto = studentService2.search(studentUserName);
 
-                // Close the alert after 10 milliseconds
-                PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                delay.setOnFinished(actionEvent -> alert.close()); 
-                delay.play();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Error");
-                alert.show();
-
-                // Close the alert after 10 milliseconds
-                PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                delay.setOnFinished(actionEvent -> alert.close()); 
-                delay.play();
-            }
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Unknown Error");
-            alert.show();
-
-            PauseTransition delay = new PauseTransition(Duration.millis(3000));
-            delay.setOnFinished(actionEvent -> alert.close()); 
-            delay.play();
+        if (password.equals("") || confirmPassword.equals("")) {
+            lblChangePasswordError.setText(
+                    "Account deletion failed: You must enter your password to confirm this action. Please try again.");
+        } else {
+                if(studentDto.getStudentPassword().equals(password)){
+                    if (password.equals(confirmPassword)) {
+                        try {
+                            StudentService studentService = new StudentServiceImpl();
+                            String deleteAccount = studentService.delete(studentId);
+                            System.out.println(deleteAccount);
+                            if (deleteAccount.equals("Success")) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Success");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Account delete Successfully!  please click SignOut button");
+                                alert.show();
+                
+                                // Close the alert after 10 milliseconds
+                                PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                                delay.setOnFinished(actionEvent -> alert.close());
+                                delay.play();
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Error");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Error");
+                                alert.show();
+                
+                                // Close the alert after 10 milliseconds
+                                PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                                delay.setOnFinished(actionEvent -> alert.close());
+                                delay.play();
+                            }
+                        } catch (Exception e) {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Unknown Error");
+                            alert.show();
+                
+                            PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                            delay.setOnFinished(actionEvent -> alert.close());
+                            delay.play();
+                        }
+                        System.out.println("AccountDeleted");
+                
+                    }else {
+                        lblChangePasswordError.setText("Passwords do not match. Please try again.");
+                    }
+                }else{
+                    lblChangePasswordError.setText("Error: Entered password wrong. Try Again.");
+                }
         }
 
+        
     }
 }
