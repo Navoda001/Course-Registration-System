@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import dto.AdminDto;
 import dto.FacultyDto;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -18,7 +19,9 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import service.custom.AdminService;
 import service.custom.FacultyService;
+import service.custom.impl.AdminServiceImpl;
 import service.custom.impl.FacultyServiceImpl;
 
 public class AdminLoginController {
@@ -58,6 +61,12 @@ public class AdminLoginController {
     private static String role;
 
     private FacultyDto facultyDto;
+
+    private AdminDto adminDto;
+
+    private static AdminDto passAdminDto;
+
+    
 
     public void initialize() {
         lblAdminLoginErrorMessage.setText("");
@@ -107,7 +116,32 @@ public class AdminLoginController {
                     }
                 }
             } else if (btnAdmin.isSelected()) {
-                // admin
+                if (userName.equals("") || password.equals("")) {
+                    lblAdminLoginErrorMessage.setText("Please Enter  the Credentials.");
+                } else {
+                    AdminService f1 = new AdminServiceImpl();
+                    this.adminDto = f1.search(userName);
+
+                    if (adminDto == null) {
+                        lblAdminLoginErrorMessage.setText("UserName not found!");
+                    } else if (password.equals(adminDto.getAdminPassword())) {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Success");
+                        alert.setHeaderText(null);
+                        alert.setContentText("LogIn Successfully!");
+                        alert.show();
+
+                        PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                        delay.setOnFinished(actionEvent -> alert.close());
+                        delay.play();
+
+                        AdminLoginController.role="Admin";
+
+                        adminLoginPage.getChildren().clear();
+                        Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
+                        adminLoginPage.getChildren().add(node);
+                    }
+                }
 
             } else {
                 System.out.println("No option selected");
@@ -121,7 +155,7 @@ public class AdminLoginController {
 
     }
 
-    public FacultyDto getDto() {
+    public FacultyDto geFacultyDto() {
         return passFacultyDto;
     }
 
@@ -129,4 +163,7 @@ public class AdminLoginController {
         return role;
     }
 
+    public AdminDto geAdminDto(){
+        return passAdminDto;
+    }
 }

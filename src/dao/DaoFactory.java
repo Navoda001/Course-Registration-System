@@ -1,6 +1,7 @@
 package dao;
 
 import dao.custom.Impl.AcademicRecordDaoImpl;
+import dao.custom.Impl.AdminDaoImpl;
 import dao.custom.Impl.CoursesDaoImpl;
 import dao.custom.Impl.EnrollmentDaoImpl;
 import dao.custom.Impl.FacultyDaoImpl;
@@ -23,7 +24,7 @@ public class DaoFactory {
     public SuperDao getDao(DaoType daoType) {
         switch (daoType) {
             case ADMIN:
-                return null;
+                return new AdminDaoImpl();
             case STUDENT:
                 return  new StudentDaoImpl();
             case FACULTY:
