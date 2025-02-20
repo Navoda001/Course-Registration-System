@@ -32,8 +32,7 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
 
     @Override
     public String Delete(String coursesId) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        return coursesDao.delete(coursesId) ? "Success" : "Fail";
     }
 
     @Override

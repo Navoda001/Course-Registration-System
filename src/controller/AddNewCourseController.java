@@ -36,7 +36,7 @@ public class AddNewCourseController {
     private TextField txtPrerequisites;
 
     public void initialize() {
-        lblAddCourseErrorMessage.setText("");
+        lblAddCourseErrorMessage.setText("Please Enter Integer values for credit hours and capacity.");
     }
 
     @FXML
@@ -55,26 +55,34 @@ public class AddNewCourseController {
             int creditHours = Integer.parseInt(txtCreditHours.getText());
             int enrollmentCapacity = Integer.parseInt(txtCapacity.getText());
 
-            CoursesDto coursesDto = new CoursesDto(courseName, creditHours, department, prerequisites,
-                    enrollmentCapacity);
-            System.out.println(coursesDto);
+            try {
+                CoursesDto coursesDto = new CoursesDto(courseName, creditHours, department, prerequisites,
+                        enrollmentCapacity);
+                System.out.println(coursesDto);
 
-            CoursesService coursesService = new CoursesServiceImpl();
-            String courseSave = coursesService.save(coursesDto);
+                CoursesService coursesService = new CoursesServiceImpl();
+                String courseSave = coursesService.save(coursesDto);
 
-            System.out.println(courseSave);
+                System.out.println(courseSave);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Course Saved Successfully!");
-            alert.show();
+                if (courseSave.equals("Success")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText(null);
+                alert.setContentText("Course Saved Successfully!");
+                alert.show();
 
-            // Close the alert after 10 milliseconds
-            PauseTransition delay = new PauseTransition(Duration.millis(3000));
-            delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
-            delay.play();
-            lblAddCourseErrorMessage.setText("");
+                // Close the alert after 10 milliseconds
+                PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                delay.play();
+                lblAddCourseErrorMessage.setText("");
+                }else{
+                    lblAddCourseErrorMessage.setText("Error");
+                }
+            } catch (Exception e) {
+                lblAddCourseErrorMessage.setText("Unknown Error");
+            }
         }
     }
 

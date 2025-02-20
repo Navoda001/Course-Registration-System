@@ -23,8 +23,12 @@ import javafx.scene.control.ListView;
 
 public class EditCourseController {
 
+
     @FXML
     private AnchorPane editCourseFrame;
+
+    @FXML
+    private Button btnRefresh;
 
     @FXML
     private ListView<String> listEditCourse;
@@ -38,7 +42,7 @@ public class EditCourseController {
 
     private static String courseId;
 
-    private CoursesService coursesService = new CoursesServiceImpl();
+     
 
     public void initialize() throws Exception {
         loadCourses();
@@ -47,7 +51,9 @@ public class EditCourseController {
     }
 
     private void loadCourses() throws Exception {
-        ArrayList<CoursesDto> courses = coursesService.getAll();
+        CoursesService coursesService = new CoursesServiceImpl();
+        ArrayList<CoursesDto> courses = new ArrayList<>();
+        courses = coursesService.getAll();
 
         for (CoursesDto course : courses) {
             String courseTitle = course.getCourseTitle();
@@ -88,7 +94,7 @@ public class EditCourseController {
                 }
 
             } catch (Exception e) {
-
+                
             }
 
         });
@@ -98,4 +104,8 @@ public class EditCourseController {
         return courseId;
     }
 
+    @FXML
+    void btnRefreshOnAction(ActionEvent event) throws Exception {
+        initialize();
+    }
 }
