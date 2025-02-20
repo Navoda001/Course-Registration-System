@@ -94,6 +94,7 @@ public class AdminLoginController {
                 } else {
                     FacultyService f1 = new FacultyServiceImpl();
                     this.facultyDto = f1.search(userName);
+                    passFacultyDto = facultyDto;
 
                     if (facultyDto == null) {
                         lblAdminLoginErrorMessage.setText("UserName not found!");
@@ -121,6 +122,7 @@ public class AdminLoginController {
                 } else {
                     AdminService f1 = new AdminServiceImpl();
                     this.adminDto = f1.search(userName);
+                    passAdminDto = adminDto;
 
                     if (adminDto == null) {
                         lblAdminLoginErrorMessage.setText("UserName not found!");
