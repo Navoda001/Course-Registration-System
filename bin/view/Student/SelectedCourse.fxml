@@ -39,12 +39,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <RadioButton fx:id="btnPrerequisitesYes" layoutX="183.0" layoutY="287.0" mnemonicParsing="false" text="Yes">
+      <RadioButton fx:id="btnPrerequisitesYes" layoutX="206.0" layoutY="265.0" mnemonicParsing="false" text="Yes">
          <toggleGroup>
             <ToggleGroup fx:id="prerequisites" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="btnPrerequisitesNo" layoutX="255.0" layoutY="288.0" mnemonicParsing="false" text="No" toggleGroup="$prerequisites" />
+      <RadioButton fx:id="btnPrerequisitesNo" layoutX="278.0" layoutY="266.0" mnemonicParsing="false" text="No" toggleGroup="$prerequisites" />
       <Label fx:id="lblCreditHours" layoutX="149.0" layoutY="121.0" prefHeight="27.0" prefWidth="94.0" text="45">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -55,15 +55,20 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblPrerequisitesErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="308.0" prefHeight="34.0" prefWidth="354.0" text="Error Message" textFill="RED">
+      <Label fx:id="lblPrerequisitesErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="305.0" prefHeight="49.0" prefWidth="354.0" textFill="RED">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnEnrollNow" layoutX="13.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnEnrollNowOnAction" prefHeight="26.0" prefWidth="354.0" style="-fx-background-color: #24219e;" text="Enroll Now" textFill="WHITE">
+      <Button fx:id="btnEnrollNow" layoutX="13.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnEnrollNowOnAction" prefHeight="26.0" prefWidth="354.0" style="-fx-background-color: #24219e;" text="Enroll Now" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <Label layoutX="23.0" layoutY="260.0" prefHeight="27.0" prefWidth="170.0" text="Prerequisites fulfilled? :">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
