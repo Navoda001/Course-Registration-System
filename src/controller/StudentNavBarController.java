@@ -55,7 +55,7 @@ public class StudentNavBarController {
     @FXML
     public void initialize() throws IOException {
 
-        lblStudentId.setText(studentId);
+        lblStudentId.setText("S"+studentId);
         lblStudentName.setText(StudentName);
 
         studentFrame.getChildren().clear();

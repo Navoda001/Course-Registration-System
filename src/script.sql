@@ -32,6 +32,15 @@ CREATE TABLE courses (
 SHOW TABLES ;
 DESCRIBE courses;
 
+INSERT INTO courses (courseName, creditHours, department, prerequisites, enrollmentCapacity)
+VALUES
+('Introduction to Programming', 3, 'Computer Science',’None’, 100),
+('Data Structures', 3, 'Computer Science', 'Should passed Introduction to Programming, 80),
+('Database Systems', 3, 'Computer Science', 'Should passed Data Structures', 75),
+('Operating Systems', 4, 'Computer Science', 'Should passed Data Structures', 70),
+('Calculus I', 4, 'Mathematics', ‘ None ’, 120),
+('Physics I', 4, 'Physics',’None’, 110);
+
 #====================================================================================================
 
 DROP TABLE IF EXISTS academic_records;
@@ -78,6 +87,12 @@ CREATE TABLE faculties (
 SHOW TABLES ;
 DESCRIBE faculties;
 
+INSERT INTO faculties (facultyName, userName, contactInfo, facultyPassword)
+VALUES
+('IT', 'it', 'it@university.edu', 'facultyPass123'), 
+('Engineering', 'engineering', 'engineering@university.edu', 'facultyPass456'), 
+('Architecture', 'architecture', 'architecture@university.edu', 'facultyPass789'); 
+
 #====================================================================================================
 DROP TABLE IF EXISTS admins;
 CREATE TABLE admins (
@@ -94,3 +109,8 @@ CREATE TABLE admins (
 SHOW TABLES ;
 DESCRIBE admins;
 
+INSERT INTO admins (adminName, userName, facultyId, department, contact_info, adminPassword)
+VALUES
+('John Doe', 'johndoe', 1006, 'Computer Science', 'john.doe@example.com', 'password123'), 
+('Jane Smith', 'janesmith', 1007, 'Mathematics', 'jane.smith@example.com', 'password456'), 
+('Mike Johnson', 'mikejohnson', 1008, 'Physics', 'mike.johnson@example.com', 'password789'); 

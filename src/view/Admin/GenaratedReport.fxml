@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GenaratedReportsController">
    <children>
-      <Label fx:id="lblCourseId" layoutX="141.0" layoutY="75.0" text="Course Id">
+      <Label fx:id="lblCourseId" layoutX="43.0" layoutY="75.0" text="Course Id">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

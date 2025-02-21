@@ -39,6 +39,9 @@ public class AdminNavBarController {
     private Label lblAdminName;
 
     @FXML
+    private Label lblContactInfo;
+
+    @FXML
     private Label lblrolle;
 
     @FXML
@@ -67,10 +70,12 @@ System.out.println(adminDto);
         if (role.equals("Faculty")) {
             lblAdminName.setText(facultyDto.getFacultyName());
             lblAdminId.setText("F"+facultyDto.getFacultyId());
+            lblContactInfo.setText(facultyDto.getContactInfo());
         }
         if(role.equals("Admin")){
             lblAdminName.setText(adminDto.getAdminName());
             lblAdminId.setText("A"+adminDto.getAdminId());
+            lblContactInfo.setText(adminDto.getContactInfo());
         }
 
         AdminFrame.getChildren().clear();

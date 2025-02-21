@@ -23,6 +23,6 @@ public class StudentDashboardController {
     @FXML
     public void initialize() {
         lblStudentName.setText(studentName);
-        lblStudentId.setText(studentId);
+        lblStudentId.setText("S"+studentId);
     }
 }
