@@ -96,7 +96,8 @@ public class SelectedCourseController {
 
                     System.out.println(enrollmentCapacity);
 
-                    EnrollmentService enrollmentService = new EnrollmentServiceImpl();
+                    if (enrollmentCapacity != 0) {
+                        EnrollmentService enrollmentService = new EnrollmentServiceImpl();
                     String saveEnrollment = enrollmentService.save(enrollmentDto);
                     System.out.println(saveEnrollment);
 
@@ -125,6 +126,19 @@ public class SelectedCourseController {
                         selectCourseFrame.getChildren().add(successLabel);
                         AnchorPane.setTopAnchor(successLabel, 50.0);
                         AnchorPane.setLeftAnchor(successLabel, 50.0);
+                    }else{
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Enrollment failed! The course has reached its maximum capacity.!");
+                        alert.show();
+
+                        // Close the alert after 10 milliseconds
+                        PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                        delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                        delay.play();
+                    }
 
                     } else {
                         lblPrerequisitesErrorMessage.setText("Error: Failed to save the enrollment. Please try again.");
