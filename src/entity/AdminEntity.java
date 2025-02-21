@@ -4,6 +4,7 @@ public class AdminEntity {
 
     private String adminId;
     private String adminName;
+    private String userName;
     private String facultyId;
     private String department;
     private String contactInfo;
@@ -12,15 +13,20 @@ public class AdminEntity {
     public AdminEntity() {
     }
 
-    public AdminEntity(String adminId, String adminName, String facultyId, String department, String contactInfo,
-            String adminPassword) {
+    
+
+    public AdminEntity(String adminId, String adminName, String userName, String facultyId, String department,
+            String contactInfo, String adminPassword) {
         this.adminId = adminId;
         this.adminName = adminName;
+        this.userName = userName;
         this.facultyId = facultyId;
         this.department = department;
         this.contactInfo = contactInfo;
         this.adminPassword = adminPassword;
     }
+
+
 
     public String getAdminId() {
         return adminId;
@@ -29,6 +35,18 @@ public class AdminEntity {
     public void setAdminId(String adminId) {
         this.adminId = adminId;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
 
     public String getAdminName() {
         return adminName;
@@ -70,12 +88,16 @@ public class AdminEntity {
         this.adminPassword = adminPassword;
     }
 
+
+
     @Override
     public String toString() {
-        return "AdminEntity [adminId=" + adminId + ", adminName=" + adminName + ", facultyId=" + facultyId
-                + ", department=" + department + ", contactInfo=" + contactInfo + ", adminPassword=" + adminPassword
-                + "]";
+        return "AdminEntity [adminId=" + adminId + ", adminName=" + adminName + ", userName=" + userName
+                + ", facultyId=" + facultyId + ", department=" + department + ", contactInfo=" + contactInfo
+                + ", adminPassword=" + adminPassword + "]";
     }
+
+   
 
     
 }

@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 
+import dto.AdminDto;
+import dto.FacultyDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,10 +33,10 @@ public class AdminNavBarController {
     private Button btnSignOut;
 
     @FXML
-    private Label lblStudentId;
+    private Label lblAdminId;
 
     @FXML
-    private Label lblStudentName;
+    private Label lblAdminName;
 
     @FXML
     private Label lblrolle;
@@ -42,14 +44,39 @@ public class AdminNavBarController {
     @FXML
     private AnchorPane mainFrame;
 
+    private static AdminDto adminDto;
+
+    private static FacultyDto facultyDto;
+
+    private String role;
+
     @FXML
     public void initialize() throws IOException {
-        lblStudentName.setText("John Doe");
-        lblStudentId.setText("123456");
+
+        AdminLoginController a1 = new AdminLoginController();
+        role = a1.getrole();
+        facultyDto = a1.geFacultyDto();
+        adminDto = a1.geAdminDto();
+
+        lblrolle.setText(role);
+
+System.out.println(facultyDto);
+System.out.println(adminDto);
+
+
+        if (role.equals("Faculty")) {
+            lblAdminName.setText(facultyDto.getFacultyName());
+            lblAdminId.setText("F"+facultyDto.getFacultyId());
+        }
+        if(role.equals("Admin")){
+            lblAdminName.setText(adminDto.getAdminName());
+            lblAdminId.setText("A"+adminDto.getAdminId());
+        }
 
         AdminFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/Dashboard.fxml"));
         AdminFrame.getChildren().add(node);
+
     }
 
     @FXML
@@ -62,7 +89,7 @@ public class AdminNavBarController {
 
     @FXML
     void btnAddNewCourseOnAction(ActionEvent event) throws IOException {
-        System.out.println("Add New Course");   
+        System.out.println("Add New Course");
         AdminFrame.getChildren().clear();
         Parent node = FXMLLoader.load(getClass().getResource("../view/Admin/AddNewCourse.fxml"));
         AdminFrame.getChildren().add(node);

@@ -22,6 +22,19 @@ public class CoursesEntity {
         this.enrollmentCapacity = enrollmentCapacity;
     }
 
+    public CoursesEntity(String courseTitle, int creditHours, String department, String prerequisites,
+            int enrollmentCapacity) {
+        this.courseTitle = courseTitle;
+        this.creditHours = creditHours;
+        this.department = department;
+        this.prerequisites = prerequisites;
+        this.enrollmentCapacity = enrollmentCapacity;
+    }
+    public CoursesEntity(String courseId,String courseTitle){
+        this.courseId = courseId;
+        this.courseTitle=courseTitle;
+    }
+
     public String getCourseId() {
         return courseId;
     }

@@ -3,97 +3,76 @@ package dto;
 public class StudentDto {
     private String studentId;
     private String studentName;
+    private String userName;
     private String studentDOB;
-    private String ProgramOfStudy;
     private String contactInfo;
-    private String academicYear;
     private String studentPassword;
 
     public StudentDto() {
     }
 
-    public StudentDto(String studentId, String studentName, String studentDOB, String programOfStudy,
-            String contactInfo, String academicYear, String studentPassword) {
+    public StudentDto(String studentId, String studentName, String userName, String studentDOB, String contactInfo,
+            String studentPassword) {
         this.studentId = studentId;
         this.studentName = studentName;
+        this.userName = userName;
         this.studentDOB = studentDOB;
-        ProgramOfStudy = programOfStudy;
         this.contactInfo = contactInfo;
-        this.academicYear = academicYear;
         this.studentPassword = studentPassword;
     }
 
+    public StudentDto( String studentName, String userName, String studentDOB, String contactInfo,
+            String studentPassword) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+        this.studentPassword = studentPassword;
+    }
+
+    public StudentDto( String studentName, String userName, String studentDOB, String contactInfo) {
+        this.studentName = studentName;
+        this.userName = userName;
+        this.studentDOB = studentDOB;
+        this.contactInfo = contactInfo;
+    }
+
+    public StudentDto(String userName,String studentPassword) {
+        this.userName = userName;
+        this.studentPassword = studentPassword;
+    }
 
     public String getStudentId() {
         return studentId;
     }
 
-
-
     public String getStudentName() {
         return studentName;
     }
-
-
 
     public String getStudentDOB() {
         return studentDOB;
     }
 
-
-
-    public String getProgramOfStudy() {
-        return ProgramOfStudy;
-    }
-
-
-
     public String getContactInfo() {
         return contactInfo;
     }
-
-
-
-    public String getAcademicYear() {
-        return academicYear;
-    }
-
-
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-
-
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
-
-
 
     public void setStudentDOB(String studentDOB) {
         this.studentDOB = studentDOB;
     }
 
-
-
-    public void setProgramOfStudy(String programOfStudy) {
-        ProgramOfStudy = programOfStudy;
-    }
-
-
-
     public void setContactInfo(String contactInfo) {
         this.contactInfo = contactInfo;
     }
-
-
-
-    public void setAcademicYear(String academicYear) {
-        this.academicYear = academicYear;
-    }
-
 
     public String getStudentPassword() {
         return studentPassword;
@@ -103,12 +82,19 @@ public class StudentDto {
         this.studentPassword = studentPassword;
     }
 
-    @Override
-    public String toString() {
-        return "StudentDto [studentId=" + studentId + ", studentName=" + studentName + ", studentDOB=" + studentDOB
-                + ", ProgramOfStudy=" + ProgramOfStudy + ", contactInfo=" + contactInfo + ", academicYear="
-                + academicYear + ", studentPassword=" + studentPassword + "]";
+    public String getUserName() {
+        return userName;
     }
 
-    
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentDto [studentId=" + studentId + ", studentName=" + studentName + ", userName=" + userName
+                + ", studentDOB=" + studentDOB + ", contactInfo=" + contactInfo + ", studentPassword=" + studentPassword
+                + "]";
+    }
+
 }

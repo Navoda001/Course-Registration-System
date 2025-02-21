@@ -17,6 +17,12 @@ public class AcademicRecordEntity {
         this.grade = grade;
     }
 
+    public AcademicRecordEntity(String courseId, String semester, String grade) {
+        this.courseId = courseId;
+        this.semester = semester;
+        this.grade = grade;
+    }
+
     public String getStudentId() {
         return studentId;
     }
