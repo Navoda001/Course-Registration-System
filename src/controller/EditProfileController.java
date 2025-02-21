@@ -1,5 +1,7 @@
 package controller;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 
 import dto.StudentDto;
@@ -80,20 +82,41 @@ public class EditProfileController {
 
     }
 
+public static String hashPassword(String password) {
+        try {
+            // Create a MessageDigest instance for SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Hash the password
+            byte[] encodedHash = digest.digest(password.getBytes());
+
+            // Convert the byte array into a hexadecimal string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : encodedHash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error hashing the password", e);
+        }
+    }
+
     @FXML
     void btnChangePasswordOnAction(ActionEvent event) throws Exception {
         String currentPassword = txtCurrentPassword.getText();
         String newPassword = txtPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
-
+        String hashedCurrentPassword = hashPassword(currentPassword);
+        String hashedNewPassword = hashPassword(newPassword);
         StudentService studentService = new StudentServiceImpl();
         studentDto = studentService.search(studentUserName);
 
         if (!(currentPassword.equals("") || newPassword.equals("") || confirmPassword.equals(""))) {
 
-            if (currentPassword.equals(studentDto.getStudentPassword())) {
+            if (hashedCurrentPassword.equals(studentDto.getStudentPassword())) {
                 if (newPassword.equals(confirmPassword)) {
-                    String saveStudent = studentService.updatePassword(studentDto.getStudentId(), newPassword);
+                    String saveStudent = studentService.updatePassword(studentDto.getStudentId(), hashedNewPassword);
                     System.out.println(saveStudent);
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Success");
@@ -163,6 +186,7 @@ public class EditProfileController {
 
         String password = txtPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
+        String hashedPassword = hashPassword(password);
         StudentService studentService2 = new StudentServiceImpl();
             studentDto = studentService2.search(studentUserName);
 
@@ -170,7 +194,7 @@ public class EditProfileController {
             lblChangePasswordError.setText(
                     "Account deletion failed: You must enter your password to confirm this action. Please try again.");
         } else {
-                if(studentDto.getStudentPassword().equals(password)){
+                if(studentDto.getStudentPassword().equals(hashedPassword)){
                     if (password.equals(confirmPassword)) {
                         try {
                             StudentService studentService = new StudentServiceImpl();
@@ -187,6 +211,8 @@ public class EditProfileController {
                                 PauseTransition delay = new PauseTransition(Duration.millis(3000));
                                 delay.setOnFinished(actionEvent -> alert.close());
                                 delay.play();
+
+                                lblChangePasswordError.setText("");
                             } else {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Error");

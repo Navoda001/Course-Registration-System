@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 
 
@@ -64,6 +66,26 @@ public class StudentSignupController {
         lblStudentSignupErrorMessage.setText("");
     }
 
+public static String hashPassword(String password) {
+        try {
+            // Create a MessageDigest instance for SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Hash the password
+            byte[] encodedHash = digest.digest(password.getBytes());
+
+            // Convert the byte array into a hexadecimal string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : encodedHash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error hashing the password", e);
+        }
+    }
+
     @FXML
     void btnStudentSignup(ActionEvent event) throws IOException {
         // System.out.println("Student Signup");
@@ -76,9 +98,10 @@ public class StudentSignupController {
         String confirmPassword = txtConfirmPassword.getText();
         String studentDOB;
         studentDOB = stdDOB.toString();
-
+        String hashedPassword = hashPassword(studentPassword);
+        System.out.println("Hashed Password: " + hashedPassword);
         try {
-            StudentDto studentDto = new StudentDto(studentName, userName, studentDOB, contactInfo, studentPassword);
+            StudentDto studentDto = new StudentDto(studentName, userName, studentDOB, contactInfo, hashedPassword);
             System.out.println(studentDto);
             // String saveStudent = StudentService.save(studentDto);
 

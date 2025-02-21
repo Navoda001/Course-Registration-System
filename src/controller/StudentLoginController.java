@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import dto.StudentDto;
 import javafx.animation.PauseTransition;
@@ -50,6 +52,26 @@ public class StudentLoginController {
         lblStudentLoginErrorMessage.setText("");
     }
 
+public static String hashPassword(String password) {
+        try {
+            // Create a MessageDigest instance for SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Hash the password
+            byte[] encodedHash = digest.digest(password.getBytes());
+
+            // Convert the byte array into a hexadecimal string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : encodedHash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error hashing the password", e);
+        }
+    }
+
     @FXML
     void btnBackToMainOnAction(ActionEvent event) throws IOException {
         System.out.println("BACK TO MAIN");
@@ -65,6 +87,8 @@ public class StudentLoginController {
         String userName = txtUsername.getText();
 
         String studentPassword = txtHiddenPassword.getText();
+        String hashedPassword = hashPassword(studentPassword);
+        System.out.println("Hashed Password: " + hashedPassword);
 
         try {
             if (userName.equals("") || studentPassword.equals("")) {
@@ -75,7 +99,7 @@ public class StudentLoginController {
 
                 if (studentDto == null) {
                     lblStudentLoginErrorMessage.setText("UserName Not Found");
-                } else if (studentDto.getStudentPassword().equals(studentPassword)) {
+                } else if (studentDto.getStudentPassword().equals(hashedPassword)) {
 
                     this.studentName = studentDto.getStudentName();
                     this.studentUserName = studentDto.getUserName();
