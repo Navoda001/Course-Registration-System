@@ -1,8 +1,8 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.AdminCrudDao;
 import entity.AdminEntity;
 
-public interface AdminDao extends CrudDao<AdminEntity, String> {
+public interface AdminDao extends AdminCrudDao<AdminEntity, String> {
 
 }

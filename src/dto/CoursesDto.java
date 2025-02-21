@@ -21,6 +21,15 @@ public class CoursesDto {
         this.enrollmentCapacity = enrollmentCapacity;
     }
 
+    public CoursesDto(String courseTitle, int creditHours, String department, String prerequisites,
+            int enrollmentCapacity) {
+        this.courseTitle = courseTitle;
+        this.creditHours = creditHours;
+        this.department = department;
+        this.prerequisites = prerequisites;
+        this.enrollmentCapacity = enrollmentCapacity;
+    }
+
     public CoursesDto(String courseId,String courseTitle){
         this.courseId = courseId;
         this.courseTitle=courseTitle;

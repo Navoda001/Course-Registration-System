@@ -70,9 +70,10 @@ DROP TABLE IF EXISTS faculties;
 CREATE TABLE faculties (
     facultyId INT PRIMARY KEY AUTO_INCREMENT,
     facultyName VARCHAR(100) NOT NULL,
-    contactInfo VARCHAR(255)
-    facultyPassword VARCHAR(255) NOT NULL, 
-)AUTO_INCREMENT = 1000;
+    userName VARCHAR(50) UNIQUE NOT NULL, 
+    contactInfo VARCHAR(255),
+    facultyPassword VARCHAR(255) NOT NULL
+) AUTO_INCREMENT = 1000;
 
 SHOW TABLES ;
 DESCRIBE faculties;
@@ -82,6 +83,7 @@ DROP TABLE IF EXISTS admins;
 CREATE TABLE admins (
     adminId INT PRIMARY KEY AUTO_INCREMENT,
     adminName VARCHAR(100) NOT NULL,
+    userName VARCHAR(50) UNIQUE NOT NULL,
     facultyId INT,
     department VARCHAR(100) ,
     contact_info VARCHAR(255),

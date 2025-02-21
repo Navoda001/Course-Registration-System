@@ -1,8 +1,8 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.FacultyCrudDao;
 import entity.FacultyEntity;
 
-public interface FacultyDao extends CrudDao<FacultyEntity, String> {
+public interface FacultyDao extends FacultyCrudDao<FacultyEntity, String> {
 
 }

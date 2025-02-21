@@ -15,8 +15,8 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
 
     @Override
     public String save(CoursesDto coursesDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+       CoursesEntity coursesEntity = new CoursesEntity(coursesDto.getCourseTitle(),coursesDto.getCreditHours(),coursesDto.getDepartment(),coursesDto.getPrerequisites(),coursesDto.getEnrollmentCapacity());
+        return coursesDao.save(coursesEntity) ? "Success" : "Fail";
     }
 
     public String saveAfterEnroll(String CourseId,int enrollmentCapacity  ) throws Exception {
@@ -24,15 +24,14 @@ private CoursesDao coursesDao = (CoursesDao) DaoFactory.getInstance().getDao(Dao
     }
 
     @Override
-    public String Update(CoursesDto coursesDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Update'");
+    public String Update( String courseId , CoursesDto coursesDto) throws Exception {
+        CoursesEntity coursesEntity = new CoursesEntity(coursesDto.getCourseTitle(),coursesDto.getCreditHours(),coursesDto.getDepartment(),coursesDto.getPrerequisites(),coursesDto.getEnrollmentCapacity());
+        return coursesDao.update(courseId,coursesEntity) ? "Success" : "Fail";
     }
 
     @Override
     public String Delete(String coursesId) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Delete'");
+        return coursesDao.delete(coursesId) ? "Success" : "Fail";
     }
 
     @Override

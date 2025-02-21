@@ -6,17 +6,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GenaratedReportsController">
    <children>
-      <Label fx:id="lblCourseId" layoutX="61.0" layoutY="111.0" text="Course Id">
+      <Label fx:id="lblCourseId" layoutX="141.0" layoutY="75.0" text="Course Id">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblCourseName" layoutX="197.0" layoutY="111.0" text="Course Name">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="179.0" layoutY="111.0" text=":">
+      <Label fx:id="lblCourseName" alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="110.0" text="Course Name">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -31,22 +26,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="313.0" prefHeight="26.0" prefWidth="158.0" text="Course completion rates :">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Label fx:id="lblCourseEnrolment" layoutX="199.0" layoutY="218.0" prefHeight="26.0" prefWidth="158.0" text="Course Enrolments value">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <Label fx:id="lblCourseVacancies" layoutX="199.0" layoutY="267.0" prefHeight="26.0" prefWidth="158.0" text="Course Vacancies value">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblCourseCompletion" layoutX="199.0" layoutY="315.0" prefHeight="26.0" prefWidth="158.0" text="Course Completion value">
          <font>
             <Font size="14.0" />
          </font>

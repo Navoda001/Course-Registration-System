@@ -22,11 +22,11 @@ public class CoursesDaoImpl implements CoursesDao {
     }
 
     @Override
-    public boolean update(CoursesEntity t) throws Exception {
+    public boolean update( String courseId , CoursesEntity t) throws Exception {
         return CrudUtil.executeUpdate(
-                "UPDATE courses SET courseName = ?, creditHours=?, department=?, prerequisites=?,enrollmentCapacity=? WHERE courseId=?",
+                "UPDATE courses SET courseName=?, creditHours=?, department=?, prerequisites=?,enrollmentCapacity=? WHERE courseId=?",
                 t.getCourseTitle(), t.getCreditHours(), t.getDepartment(), t.getPrerequisites(),
-                t.getEnrollmentCapacity(), t.getCourseId());
+                t.getEnrollmentCapacity(), courseId);
     }
 
     @Override
