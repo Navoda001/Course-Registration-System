@@ -94,21 +94,3 @@ CREATE TABLE admins (
 SHOW TABLES ;
 DESCRIBE admins;
 
-#====================================================================================================
-
-
--- DROP TABLE IF EXISTS users;
--- CREATE TABLE users (
---     userId INT PRIMARY KEY AUTO_INCREMENT,
---     userName VARCHAR(50) UNIQUE NOT NULL,
---     password VARCHAR(255) NOT NULL, 
---     entityId INT NOT NULL,  
---     entityType ENUM('student', 'faculty', 'admin'), 
---     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
-
--- SHOW TABLES;
--- DESCRIBE Users;
-
-
-

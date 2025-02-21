@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [System Functionalities](#system-functionalities)
+- [System Architecture](#system-architecture)
 - [System Requirements](#system-requirements)
 - [Installation & Setup](#installation--setup)
 - [Usage Guide](#usage-guide)
@@ -33,6 +34,26 @@ The **Course Management System** is a comprehensive application designed to faci
 
 6. **Reporting Tools**
    - Generate reports for administrators, including enrollment statistics.
+
+## System Architecture
+The project follows a **Layered Architecture**, which enhances maintainability, scalability, and separation of concerns:
+
+1. **Presentation Layer (UI Layer)**
+   - Developed using JavaFX for a user-friendly graphical interface.
+
+2. **Controller Layer**
+   - Manages communication between the UI and business logic.
+   - Processes user actions and forwards them to the appropriate service methods.
+   
+3. **Business Logic Layer (Service Layer)**
+   - Contains core functionalities and logic for handling course enrollment, course records, and  student records.
+   
+4. **Data Access Layer (DAO Layer)**
+   - Manages interactions with the database using JDBC.
+   - Implements CRUD operations for courses, students, and enrollments.
+
+5. **Database Layer**
+   - Uses MySQL for storing student, course, and enrollment data.
 
 ## System Requirements
 - **Operating System**: Windows, macOS, or Linux
