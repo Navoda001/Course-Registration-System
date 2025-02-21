@@ -56,7 +56,7 @@ public class SelectedCourseController {
     @FXML
     private ToggleGroup prerequisites;
 
-    private  String  courseId;
+    private String courseId;
     private String studentId;
 
     public void initialize() throws Exception {
@@ -96,35 +96,49 @@ public class SelectedCourseController {
 
                     System.out.println(enrollmentCapacity);
 
-                    EnrollmentService enrollmentService = new EnrollmentServiceImpl();
-                    String saveEnrollment = enrollmentService.save(enrollmentDto);
-                    System.out.println(saveEnrollment);
+                    if (enrollmentCapacity != 0) {
+                        EnrollmentService enrollmentService = new EnrollmentServiceImpl();
+                        String saveEnrollment = enrollmentService.save(enrollmentDto);
+                        System.out.println(saveEnrollment);
 
-                    if (saveEnrollment.equals("Success")) {
-                        enrollmentCapacity = enrollmentCapacity - 1;
+                        if (saveEnrollment.equals("Success")) {
+                            enrollmentCapacity = enrollmentCapacity - 1;
 
-                        CoursesService coursesService2 = new CoursesServiceImpl();
-                        String courseUpdate = coursesService2.saveAfterEnroll(courseId, enrollmentCapacity);
-                        System.out.println(courseUpdate);
+                            CoursesService coursesService2 = new CoursesServiceImpl();
+                            String courseUpdate = coursesService2.saveAfterEnroll(courseId, enrollmentCapacity);
+                            System.out.println(courseUpdate);
 
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Success");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Enrollment Successfully!");
-                        alert.show();
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Success");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Enrollment Successfully!");
+                            alert.show();
 
-                        // Close the alert after 10 milliseconds
-                        PauseTransition delay = new PauseTransition(Duration.millis(3000));
-                        delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
-                        delay.play();
+                            // Close the alert after 10 milliseconds
+                            PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                            delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                            delay.play();
 
-                        Label successLabel = new Label("Enrollment Successful!");
-                        successLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green;");
+                            Label successLabel = new Label("Enrollment Successful!");
+                            successLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green;");
 
-                        selectCourseFrame.getChildren().clear();
-                        selectCourseFrame.getChildren().add(successLabel);
-                        AnchorPane.setTopAnchor(successLabel, 50.0);
-                        AnchorPane.setLeftAnchor(successLabel, 50.0);
+                            selectCourseFrame.getChildren().clear();
+                            selectCourseFrame.getChildren().add(successLabel);
+                            AnchorPane.setTopAnchor(successLabel, 50.0);
+                            AnchorPane.setLeftAnchor(successLabel, 50.0);
+                        } else {
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Enrollment failed! The course has reached its maximum capacity.!");
+                            alert.show();
+
+                            // Close the alert after 10 milliseconds
+                            PauseTransition delay = new PauseTransition(Duration.millis(3000));
+                            delay.setOnFinished(actionEvent -> alert.close()); // Renamed 'event' to 'actionEvent'
+                            delay.play();
+                        }
 
                     } else {
                         lblPrerequisitesErrorMessage.setText("Error: Failed to save the enrollment. Please try again.");
