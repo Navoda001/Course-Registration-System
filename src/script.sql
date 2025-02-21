@@ -34,12 +34,12 @@ DESCRIBE courses;
 
 INSERT INTO courses (courseName, creditHours, department, prerequisites, enrollmentCapacity)
 VALUES
-('Introduction to Programming', 3, 'Computer Science',’None’, 100),
-('Data Structures', 3, 'Computer Science', 'Should passed Introduction to Programming, 80),
+('Introduction to Programming', 3, 'Computer Science','None', 100),
+('Data Structures', 3, 'Computer Science', 'Should passed Introduction to Programming', 80),
 ('Database Systems', 3, 'Computer Science', 'Should passed Data Structures', 75),
 ('Operating Systems', 4, 'Computer Science', 'Should passed Data Structures', 70),
-('Calculus I', 4, 'Mathematics', ‘ None ’, 120),
-('Physics I', 4, 'Physics',’None’, 110);
+('Calculus I', 4, 'Mathematics', ' None ', 120),
+('Physics I', 4, 'Physics','None', 110);
 
 #====================================================================================================
 
