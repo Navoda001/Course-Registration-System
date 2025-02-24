@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import dto.AdminDto;
 import dto.FacultyDto;
@@ -72,6 +74,26 @@ public class AdminLoginController {
         lblAdminLoginErrorMessage.setText("");
     }
 
+    public static String hashPassword(String password) {
+        try {
+            // Create a MessageDigest instance for SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Hash the password
+            byte[] encodedHash = digest.digest(password.getBytes());
+
+            // Convert the byte array into a hexadecimal string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : encodedHash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error hashing the password", e);
+        }
+    }
+
     @FXML
     void btnBackToMainOnAction(ActionEvent event) throws IOException {
         System.out.println("Back to main menu");
@@ -86,6 +108,8 @@ public class AdminLoginController {
 
         String userName = txtUsername.getText();
         String password = txtHiddenPassword.getText();
+        String adminPassword = txtHiddenPassword.getText();
+        String hashedPassword = hashPassword(adminPassword);
 
         try {
             if (btnFaculty.isSelected()) {
@@ -98,7 +122,7 @@ public class AdminLoginController {
 
                     if (facultyDto == null) {
                         lblAdminLoginErrorMessage.setText("UserName not found!");
-                    } else if (password.equals(facultyDto.getFacultyPassword())) {
+                    } else if (hashedPassword.equals(facultyDto.getFacultyPassword())) {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Success");
                         alert.setHeaderText(null);
@@ -128,7 +152,7 @@ public class AdminLoginController {
 
                     if (adminDto == null) {
                         lblAdminLoginErrorMessage.setText("UserName not found!");
-                    } else if (password.equals(adminDto.getAdminPassword())) {
+                    } else if (hashedPassword.equals(adminDto.getAdminPassword())) {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Success");
                         alert.setHeaderText(null);
