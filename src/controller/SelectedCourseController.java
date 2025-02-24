@@ -141,7 +141,8 @@ public class SelectedCourseController {
             lblPrerequisitesErrorMessage.setText("You can't enroll in this course.");
 
         } else {
-            System.out.println("No option selected");
+            System.out.println("No option is selected.");
+            lblPrerequisitesErrorMessage.setText("No option is selected.");
         }
     }
 
