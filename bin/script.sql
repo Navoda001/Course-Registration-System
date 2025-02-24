@@ -89,9 +89,13 @@ DESCRIBE faculties;
 
 INSERT INTO faculties (facultyName, userName, contactInfo, facultyPassword)
 VALUES
-('IT', 'it', 'it@university.edu', 'facultyPass123'), 
-('Engineering', 'engineering', 'engineering@university.edu', 'facultyPass456'), 
-('Architecture', 'architecture', 'architecture@university.edu', 'facultyPass789'); 
+('IT', 'it', 'it@university.edu', 'b86c23d487d096d98dfb47587032ace3f9a2013eae92e1602711a43ad855cc17'), 
+('Engineering', 'engineering', 'engineering@university.edu', '54c305e1a3c4522b44eb062ba1b6135cfb9625573b8b18dab540802fd5c3cb1d'), 
+('Architecture', 'architecture', 'architecture@university.edu', '8e61e551e5847c6f61c22230f6fd73f0236d2bf007076d5d2a6f30b1e40da6fd'); 
+
+# UserName = it and password = facultyPass123
+# UserName = engineering and password = facultyPass456
+# UserName = architecture and password = facultyPass789
 
 #====================================================================================================
 DROP TABLE IF EXISTS admins;
@@ -111,6 +115,10 @@ DESCRIBE admins;
 
 INSERT INTO admins (adminName, userName, facultyId, department, contact_info, adminPassword)
 VALUES
-('John Doe', 'johndoe', 1006, 'Computer Science', 'john.doe@example.com', 'password123'), 
-('Jane Smith', 'janesmith', 1007, 'Mathematics', 'jane.smith@example.com', 'password456'), 
-('Mike Johnson', 'mikejohnson', 1008, 'Physics', 'mike.johnson@example.com', 'password789'); 
+('John Doe', 'johndoe', 1001, 'Computer Science', 'john.doe@example.com', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f'), 
+('Jane Smith', 'janesmith', 1002, 'Mathematics', 'jane.smith@example.com', 'c6ba91b90d922e159893f46c387e5dc1b3dc5c101a5a4522f03b987177a24a91'), 
+('Mike Johnson', 'mikejohnson', 1003, 'Physics', 'mike.johnson@example.com', '5efc2b017da4f7736d192a74dde5891369e0685d4d38f2a455b6fcdab282df9c'); 
+
+# UserName = johndoe and password = password123
+# UserName = janesmith and password = password456
+# UserName = mikejohnson and password = password789
