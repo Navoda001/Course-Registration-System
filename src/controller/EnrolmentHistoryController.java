@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -47,7 +48,13 @@ public class EnrolmentHistoryController {
     public void initialize() throws Exception {
         StudentLoginController s1 = new StudentLoginController();
         this.studentId = s1.getId();
+        Label successLabel = new Label("Select an Enrollment to Edit.");
+        successLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: green;");
 
+        EnrolmentFrame.getChildren().clear();
+        EnrolmentFrame.getChildren().add(successLabel);
+        AnchorPane.setTopAnchor(successLabel, 50.0);
+        AnchorPane.setLeftAnchor(successLabel, 50.0);
         getAllCustomer();
 
         tableCourseId.setCellValueFactory(new PropertyValueFactory<>("courseId"));
@@ -101,11 +108,10 @@ public class EnrolmentHistoryController {
         return courseID;
     }
 
-    
     @FXML
     void btnRefreshButtonOnAction(ActionEvent event) throws Exception {
         System.out.println("Refresh table");
-        reloadTable() ;
+        reloadTable();
     }
 
 }

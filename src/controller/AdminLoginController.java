@@ -114,6 +114,8 @@ public class AdminLoginController {
                         adminLoginPage.getChildren().clear();
                         Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
                         adminLoginPage.getChildren().add(node);
+                    }else{
+                        lblAdminLoginErrorMessage.setText("Incorrect Password!");
                     }
                 }
             } else if (btnAdmin.isSelected()) {
@@ -142,6 +144,8 @@ public class AdminLoginController {
                         adminLoginPage.getChildren().clear();
                         Parent node = FXMLLoader.load(getClass().getResource("../view/AdminNavbar.fxml"));
                         adminLoginPage.getChildren().add(node);
+                    }else{
+                        lblAdminLoginErrorMessage.setText("Incorrect Password!");
                     }
                 }
 
